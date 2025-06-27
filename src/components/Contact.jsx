@@ -179,8 +179,10 @@ const Contact = () => {
           <p className="text-gray-400 mb-4">
             © 2024 Rohit Kaundal. Cybersecurity Professional.
           </p>
-          <p className="text-sm text-gray-500 mb-2">
+          <p className="text-sm text-gray-500 mb-2" >
+            <a target="_blank" rel="noopener noreferrer" href="https://keybase.io/rohitkaundal/pgp_keys.asc">
             PGP Key Fingerprint: 0BE2 9B1D 0BE2 E92B 94A4 457D 7930 6F4C 3DDE B1BD
+            </a>
           </p>
           <p className="text-sm text-gray-500">
             Built with React, Tailwind CSS, and Framer Motion. 
