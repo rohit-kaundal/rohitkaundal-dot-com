@@ -21,6 +21,7 @@ const Navigation = () => {
     { name: 'Services', href: '#services' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Projects', href: '#projects' },
+    { name: 'K8s-Scanner', href: 'https://rohit-kaundal.github.io/k8s-scanner/', external: true, highlight: true },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -49,8 +50,14 @@ const Navigation = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
+                  target={item.external ? '_blank' : '_self'}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
                   whileHover={{ y: -2 }}
-                  className="text-gray-300 hover:text-cyber-primary transition-colors duration-200 font-medium"
+                  className={`transition-colors duration-200 font-medium ${
+                    item.highlight 
+                      ? 'text-cyber-primary hover:text-cyber-accent bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 px-3 py-1 rounded-lg border border-cyber-primary/30 hover:border-cyber-accent/50 shadow-neon-sm'
+                      : 'text-gray-300 hover:text-cyber-primary'
+                  }`}
                 >
                   {item.name}
                 </motion.a>
@@ -83,8 +90,14 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
+                target={item.external ? '_blank' : '_self'}
+                rel={item.external ? 'noopener noreferrer' : undefined}
                 onClick={() => setIsOpen(false)}
-                className="text-gray-300 hover:text-cyber-primary block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  item.highlight 
+                    ? 'text-cyber-primary hover:text-cyber-accent bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 rounded-lg border border-cyber-primary/30 hover:border-cyber-accent/50 shadow-neon-sm'
+                    : 'text-gray-300 hover:text-cyber-primary'
+                }`}
               >
                 {item.name}
               </a>
