@@ -7,7 +7,7 @@ const About = () => {
     { icon: Shield, label: 'Years Experience', value: '17+' },
     { icon: Award, label: 'Certifications', value: '6+' },
     { icon: Users, label: 'Clients Protected', value: '100+' },
-    { icon: Zap, label: 'Cases Investigated', value: '500+' },
+    { icon: Zap, label: 'Malware Investigated', value: '500+' },
   ]
 
   const containerVariants = {
