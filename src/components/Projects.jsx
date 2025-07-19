@@ -21,6 +21,23 @@ const Projects = () => {
 
   const projects = [
     {
+      title: '******** AI',
+      description: 'Plug-in security scanner + AI chat + auto policy generation. Think "ChatGPT for Cloud Security Posture" for SaaS startups.',
+      category: 'ai-security',
+      technologies: ['GenAI', 'Cloud Security', 'Policy Automation', 'SaaS'],
+      features: [
+        'AI-powered security scanning',
+        'Automated policy generation',
+        'Chat-based security insights',
+        'Plug-and-play integration'
+      ],
+      github: null,
+      demo: null,
+      status: 'development',
+      icon: Cpu,
+      gradient: 'from-cyber-primary to-cyber-accent'
+    },
+    {
       title: 'Vassago Consultancy',
       description: 'Founded cyber security and digital forensics services company providing expert consultation for cybercrime investigation.',
       category: 'consultancy',
@@ -157,15 +174,15 @@ const Projects = () => {
       gradient: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'K8s-Scanner',
-      description: 'Open-source security tool for scanning Kubernetes clusters to detect misconfigurations and security vulnerabilities.',
+      title: 'k8s-scanner',
+      description: 'Agentless scanner for Kubernetes best practices and CVEs. Open-source tool helping startups secure their K8s infrastructure.',
       category: 'security-testing',
       technologies: ['Kubernetes', 'Security Scanning', 'Go', 'YAML'],
       features: [
-        'Kubernetes misconfiguration detection',
-        'Security vulnerability scanning',
-        'Comprehensive reporting',
-        'Easy integration with CI/CD'
+        'Agentless Kubernetes scanning',
+        'CVE detection and reporting',
+        'Best practices validation',
+        'CI/CD pipeline integration'
       ],
       github: 'https://github.com/rohit-kaundal/k8s-scanner',
       demo: 'https://rohit-kaundal.github.io/k8s-scanner/',
@@ -241,7 +258,7 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyber-primary to-cyber-accent mx-auto mb-6" />
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Open-source security tools and frameworks developed to advance cybersecurity practices
+            Open-source security tools and GenAI-powered solutions designed to help startups scale securely
           </p>
         </motion.div>
 

@@ -4,7 +4,7 @@ import { Shield, Award, Users, Zap } from 'lucide-react'
 
 const About = () => {
   const stats = [
-    { icon: Shield, label: 'Years Experience', value: '12+' },
+    { icon: Shield, label: 'Years Experience', value: '17+' },
     { icon: Award, label: 'Certifications', value: '6+' },
     { icon: Users, label: 'Clients Protected', value: '100+' },
     { icon: Zap, label: 'Cases Investigated', value: '500+' },
@@ -60,23 +60,24 @@ const About = () => {
             className="glass p-8 rounded-2xl"
           >
             <h3 className="text-2xl font-bold mb-6 text-cyber-primary">
-              Cyber Security Consultant & Digital Forensics Investigator
+              Cybersecurity + GenAI Strategist for Startups
             </h3>
             <div className="space-y-4 text-gray-300">
               <p>
-                With over 12+ years of experience in cybersecurity, I specialize in web security, 
-                network security, application security, cyber forensics investigation, and cybercrime 
-                investigation. Founder of Vassago Consultancy, a cyber security and digital forensics services company.
+                With over 17+ years of experience in cybersecurity, I help SaaS founders and small teams 
+                secure their cloud infra, automate compliance, and sleep better at night - without hiring 
+                an expensive security team.
               </p>
               <p>
-                Expert in emerging technologies including AI solutions security auditing and Blockchain 
-                smart contract auditing. Specialized in cases related to Espionage, VoIP Call, Identity Theft, 
-                Cyber Pornography, Credit/Debit Card Fraud, and cryptocurrency-related crimes.
+                My mission is to democratize security automation using GenAI and empower founders to ship 
+                fast without fear. I work with SaaS startups (0-50 employees), founders gearing up for 
+                SOC2, ISO 27001, or investor scrutiny, and CTOs & DevOps engineers tired of spreadsheets 
+                and audit chaos.
               </p>
               <p>
-                Proficient in auditing and implementing ISMS frameworks adhering to GDPR/Privacy Shield, 
-                PCI, SOX, ISO 27001 & HIPAA standards. Associate member of "National Cyber Safety and 
-                Security Standard organization".
+                Building ******** AI (coming soon) - a plug-in security scanner + AI chat + auto policy 
+                generation tool. Think "ChatGPT for Cloud Security Posture". Also maintaining k8s-scanner, 
+                an open-source agentless scanner for Kubernetes best practices and CVEs.
               </p>
             </div>
           </motion.div>
@@ -121,30 +122,30 @@ const About = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-cyber-primary to-cyber-accent rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-lg font-semibold mb-2 text-white">Prevention First</h4>
+              <h4 className="text-lg font-semibold mb-2 text-white">Security is an Enabler</h4>
               <p className="text-gray-400 text-sm">
-                Building robust defenses to prevent attacks before they happen, 
-                rather than just responding to incidents.
+                Security should accelerate development, not block it. 
+                Building tools that make security seamless and automated.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-cyber-accent to-cyber-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-lg font-semibold mb-2 text-white">Continuous Learning</h4>
+              <h4 className="text-lg font-semibold mb-2 text-white">AI Amplifies Engineers</h4>
               <p className="text-gray-400 text-sm">
-                Staying ahead of emerging threats through constant research and 
-                adaptation to new security challenges.
+                AI should amplify engineers, not replace them. 
+                Automation scales trust and enables faster, more secure development.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-cyber-secondary to-cyber-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-lg font-semibold mb-2 text-white">Human-Centric</h4>
+              <h4 className="text-lg font-semibold mb-2 text-white">Build in Public</h4>
               <p className="text-gray-400 text-sm">
-                Understanding that security is as much about people as it is about 
-                technology and processes.
+                Done &gt; Perfect. Build in public, talk to users, ship fast. 
+                Open-source contributions that advance the security community.
               </p>
             </div>
           </div>

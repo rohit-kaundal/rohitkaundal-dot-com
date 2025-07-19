@@ -14,33 +14,33 @@ import {
 const Services = () => {
   const services = [
     {
-      icon: Search,
-      title: 'Digital Forensics Investigation',
-      description: 'Expert forensic analysis for cybercrime cases including espionage, identity theft, and fraud.',
+      icon: Shield,
+      title: 'Cloud Security Posture Assessment',
+      description: 'Comprehensive cloud infrastructure security assessment for SaaS startups using GenAI-powered analysis.',
       features: [
-        'Mobile Device Forensics',
-        'Computer Forensics',
-        'Cryptocurrency Investigation',
-        'Incident Response & Recovery'
+        'AWS/Azure/GCP Security Review',
+        'Infrastructure as Code Auditing',
+        'Kubernetes Security Scanning',
+        'GenAI-Powered Vulnerability Detection'
       ],
       color: 'from-cyber-primary to-cyan-400'
     },
     {
-      icon: Shield,
-      title: 'Vulnerability Assessment & Penetration Testing',
-      description: 'Comprehensive security testing of web applications, networks, and mobile applications.',
+      icon: FileCheck,
+      title: 'SOC2 & ISO 27001 Readiness',
+      description: 'Fast-track compliance preparation for startups preparing for investor scrutiny and enterprise sales.',
       features: [
-        'Web Application Security Testing',
-        'Network Penetration Testing',
-        'Mobile App Security Assessment',
-        'Source Code Security Review'
+        'Gap Analysis & Remediation',
+        'Automated Policy Generation',
+        'Audit Readiness Programs',
+        'Compliance Automation Setup'
       ],
       color: 'from-cyber-accent to-purple-400'
     },
     {
       icon: Zap,
-      title: 'AI & Blockchain Security Auditing',
-      description: 'Specialized security auditing for emerging technologies including AI solutions and smart contracts.',
+      title: 'AI & Smart Contract Security',
+      description: 'Specialized security auditing for AI models and blockchain smart contracts.',
       features: [
         'AI Model Security Assessment',
         'Smart Contract Auditing',
@@ -50,26 +50,26 @@ const Services = () => {
       color: 'from-yellow-500 to-orange-500'
     },
     {
-      icon: FileCheck,
-      title: 'Compliance & ISMS Implementation',
-      description: 'Implementation and auditing of security frameworks for regulatory compliance.',
+      icon: Target,
+      title: 'DevSecOps Integration',
+      description: 'Seamless security integration into CI/CD pipelines without slowing down development velocity.',
       features: [
-        'ISO 27001 Implementation',
-        'GDPR Compliance Assessment',
-        'PCI DSS Auditing',
-        'HIPAA Security Evaluation'
+        'Security-as-Code Implementation',
+        'Automated Security Testing',
+        'Container Security Scanning',
+        'Infrastructure Security Monitoring'
       ],
       color: 'from-cyber-secondary to-pink-400'
     },
     {
       icon: Users,
-      title: 'Cybersecurity Consultation',
-      description: 'Strategic cybersecurity guidance for organizations and law enforcement agencies.',
+      title: 'Startup Security Strategy',
+      description: 'Strategic security guidance for CTOs and DevOps engineers at fast-growing SaaS companies.',
       features: [
-        'Security Strategy Development',
+        'Security Roadmap Development',
+        'Team Training & Enablement',
         'Incident Response Planning',
-        'Cybercrime Investigation Support',
-        'Training & Capacity Building'
+        'Security Budget Optimization'
       ],
       color: 'from-cyber-green to-green-400'
     }
@@ -109,7 +109,7 @@ const Services = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyber-primary to-cyber-accent mx-auto mb-6" />
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Comprehensive cybersecurity solutions tailored to protect and strengthen your digital infrastructure
+            Security automation and compliance solutions designed specifically for SaaS startups and fast-growing teams
           </p>
         </motion.div>
 

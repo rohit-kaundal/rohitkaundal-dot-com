@@ -235,8 +235,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)' }}
           >
-            <div className="mb-2">Cyber Security Consultant & Digital Forensics Investigator</div>
-            <div className="text-cyber-primary">Defender of Digital Frontiers</div>
+            <div className="mb-2">Cybersecurity Strategist | AI & Cloud Security Architect | Smart Contract Auditor</div>
+            <div className="text-cyber-primary">Helping Startups Stay Secure & Compliant 🚀</div>
           </motion.div>
 
           <motion.p
@@ -246,10 +246,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
           >
-            Over 12+ years of experience in web security, network security, application security, 
-            cyber forensics investigation, and cybercrime investigation. Specialized in AI solutions 
-            security auditing and Blockchain smart contract auditing. Expert in ISMS frameworks 
-            adhering to GDPR/Privacy Shield, PCI, SOX, ISO 27001 & HIPAA standards.
+            Over 17+ years of experience helping SaaS startups secure their cloud infrastructure, 
+            automate compliance, and scale without fear. Specialized in GenAI-powered security solutions, 
+            smart contract auditing, and startup-focused automation. Expert in SOC2, ISO 27001, and 
+            compliance frameworks tailored for fast-growing teams.
           </motion.p>
 
           <motion.div
