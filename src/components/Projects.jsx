@@ -157,6 +157,23 @@ const Projects = () => {
       gradient: 'from-green-500 to-emerald-500'
     },
     {
+      title: 'K8s-Scanner',
+      description: 'Open-source security tool for scanning Kubernetes clusters to detect misconfigurations and security vulnerabilities.',
+      category: 'security-testing',
+      technologies: ['Kubernetes', 'Security Scanning', 'Go', 'YAML'],
+      features: [
+        'Kubernetes misconfiguration detection',
+        'Security vulnerability scanning',
+        'Comprehensive reporting',
+        'Easy integration with CI/CD'
+      ],
+      github: 'https://github.com/rohit-kaundal/k8s-scanner',
+      demo: 'https://rohit-kaundal.github.io/k8s-scanner/',
+      status: 'production',
+      icon: Shield,
+      gradient: 'from-blue-500 to-cyan-500'
+    },
+    {
       title: 'Cryptocurrency Investigation Toolkit',
       description: 'Advanced toolkit for investigating cryptocurrency transactions and blockchain-based crimes.',
       category: 'blockchain',
