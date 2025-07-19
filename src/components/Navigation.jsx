@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Shield } from 'lucide-react'
+import { Menu, X, Shield, ChevronDown } from 'lucide-react'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +22,12 @@ const Navigation = () => {
     { name: 'Services', href: '#services' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Projects', href: '#projects' },
-    { name: 'K8s-Scanner', href: 'https://rohit-kaundal.github.io/k8s-scanner/', external: true, highlight: true },
     { name: 'Contact', href: '#contact' },
+  ]
+
+  const toolsItems = [
+    { name: 'K8s Scanner', href: 'https://rohit-kaundal.github.io/k8s-scanner/', external: true },
+    { name: 'DigitalOcean MCP Server', href: 'https://rohit-kaundal.github.io/digitalocean-mcp-server/', external: true },
   ]
 
   return (
@@ -53,15 +58,48 @@ const Navigation = () => {
                   target={item.external ? '_blank' : '_self'}
                   rel={item.external ? 'noopener noreferrer' : undefined}
                   whileHover={{ y: -2 }}
-                  className={`transition-colors duration-200 font-medium ${
-                    item.highlight 
-                      ? 'text-cyber-primary hover:text-cyber-accent bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 px-3 py-1 rounded-lg border border-cyber-primary/30 hover:border-cyber-accent/50 shadow-neon-sm'
-                      : 'text-gray-300 hover:text-cyber-primary'
-                  }`}
+                  className="text-gray-300 hover:text-cyber-primary transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </motion.a>
               ))}
+              
+              {/* Tools Dropdown */}
+              <div className="relative">
+                <motion.button
+                  onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
+                  whileHover={{ y: -2 }}
+                  className="text-cyber-primary hover:text-cyber-accent bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 px-3 py-1 rounded-lg border border-cyber-primary/30 hover:border-cyber-accent/50 shadow-neon-sm transition-colors duration-200 font-medium flex items-center space-x-1"
+                >
+                  <span>Tools</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${toolsDropdownOpen ? 'rotate-180' : ''}`} />
+                </motion.button>
+                
+                {toolsDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-64 glass backdrop-blur-md rounded-lg border border-cyber-primary/30 shadow-lg z-50"
+                  >
+                    <div className="py-2">
+                      {toolsItems.map((tool) => (
+                        <motion.a
+                          key={tool.name}
+                          href={tool.href}
+                          target={tool.external ? '_blank' : '_self'}
+                          rel={tool.external ? 'noopener noreferrer' : undefined}
+                          whileHover={{ x: 4 }}
+                          className="block px-4 py-2 text-gray-300 hover:text-cyber-primary hover:bg-cyber-primary/10 transition-colors duration-200"
+                          onClick={() => setToolsDropdownOpen(false)}
+                        >
+                          {tool.name}
+                        </motion.a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -93,15 +131,28 @@ const Navigation = () => {
                 target={item.external ? '_blank' : '_self'}
                 rel={item.external ? 'noopener noreferrer' : undefined}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
-                  item.highlight 
-                    ? 'text-cyber-primary hover:text-cyber-accent bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 rounded-lg border border-cyber-primary/30 hover:border-cyber-accent/50 shadow-neon-sm'
-                    : 'text-gray-300 hover:text-cyber-primary'
-                }`}
+                className="block px-3 py-2 text-base font-medium transition-colors duration-200 text-gray-300 hover:text-cyber-primary"
               >
                 {item.name}
               </a>
             ))}
+            
+            {/* Mobile Tools Section */}
+            <div className="pt-2 border-t border-cyber-primary/20">
+              <div className="px-3 py-1 text-cyber-primary font-semibold text-sm">Tools</div>
+              {toolsItems.map((tool) => (
+                <a
+                  key={tool.name}
+                  href={tool.href}
+                  target={tool.external ? '_blank' : '_self'}
+                  rel={tool.external ? 'noopener noreferrer' : undefined}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-6 py-2 text-base font-medium transition-colors duration-200 text-gray-300 hover:text-cyber-primary"
+                >
+                  {tool.name}
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
       )}
