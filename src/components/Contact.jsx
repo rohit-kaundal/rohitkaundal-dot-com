@@ -28,7 +28,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Chandigarh | Shimla | Delhi, INDIA',
+      value: 'India | Dubai',
       href: null
     }
   ]
@@ -113,7 +113,7 @@ const Contact = () => {
               </h4>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
-                  '12+ years of cybersecurity expertise',
+                  '17+ years of cybersecurity expertise',
                   'Founder of Vassago Consultancy',
                   'Expert in digital forensics investigation',
                   'ISMS compliance specialist',
@@ -177,7 +177,7 @@ const Contact = () => {
           className="mt-16 pt-8 border-t border-gray-800 text-center"
         >
           <p className="text-gray-400 mb-4">
-            © 2024 Rohit Kaundal. Cybersecurity Professional.
+            © 2025 Rohit Kaundal. Cybersecurity Professional.
           </p>
           <p className="text-sm text-gray-500 mb-2" >
             <a target="_blank" rel="noopener noreferrer" href="https://keybase.io/rohitkaundal/pgp_keys.asc">
