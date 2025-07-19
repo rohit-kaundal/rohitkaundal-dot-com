@@ -62,16 +62,19 @@ const Navigation = () => {
                 </motion.a>
               ))}
               
-              {/* Tools Dropdown */}
+              {/* Tools Dropdown - Special Design */}
               <div className="relative">
                 <motion.button
                   onClick={() => setToolsOpen(!toolsOpen)}
                   onMouseEnter={() => setToolsOpen(true)}
-                  whileHover={{ y: -2 }}
-                  className="flex items-center space-x-1 text-gray-300 hover:text-cyber-primary transition-colors duration-200 font-medium"
+                  whileHover={{ y: -2, scale: 1.05 }}
+                  className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 hover:from-cyber-primary/30 hover:to-cyber-accent/30 border border-cyber-primary/40 hover:border-cyber-accent/60 rounded-lg backdrop-blur-sm shadow-lg hover:shadow-neon transition-all duration-300 font-medium group"
                 >
-                  <span>Tools</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${toolsOpen ? 'rotate-180' : ''}`} />
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-cyber-green rounded-full animate-pulse"></div>
+                    <span className="text-cyber-primary group-hover:text-cyber-accent transition-colors duration-300">Tools</span>
+                  </div>
+                  <ChevronDown className={`w-4 h-4 text-cyber-primary group-hover:text-cyber-accent transition-all duration-300 ${toolsOpen ? 'rotate-180' : ''}`} />
                 </motion.button>
                 
                 {toolsOpen && (
@@ -139,8 +142,11 @@ const Navigation = () => {
             ))}
             
             {/* Mobile Tools Section */}
-            <div className="px-3 py-2">
-              <div className="text-gray-400 text-sm font-medium mb-2">Tools</div>
+            <div className="px-3 py-2 mt-4">
+              <div className="flex items-center space-x-2 mb-3 px-3 py-2 bg-gradient-to-r from-cyber-primary/20 to-cyber-accent/20 border border-cyber-primary/40 rounded-lg">
+                <div className="w-2 h-2 bg-cyber-green rounded-full animate-pulse"></div>
+                <div className="text-cyber-primary text-sm font-medium">Tools</div>
+              </div>
               {toolsItems.map((tool) => (
                 <a
                   key={tool.name}

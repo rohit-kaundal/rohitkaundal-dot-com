@@ -7,6 +7,7 @@ const Hero = () => {
   const canvasRef = useRef(null)
 
   useEffect(() => {
+    // Simple particle animation - minimal distractions
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -17,149 +18,52 @@ const Hero = () => {
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setClearColor(0x000000, 0)
 
-    const globeGeometry = new THREE.SphereGeometry(2, 32, 32)
-    const globeMaterial = new THREE.MeshPhongMaterial({
-      color: 0x1a365d,
-      transparent: true,
-      opacity: 0.8,
-      wireframe: false
-    })
-    const globe = new THREE.Mesh(globeGeometry, globeMaterial)
-    scene.add(globe)
-
-    const wireframeGeometry = new THREE.SphereGeometry(2.05, 32, 32)
-    const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x00d4ff,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.3
-    })
-    const wireframe = new THREE.Mesh(wireframeGeometry, wireframeMaterial)
-    scene.add(wireframe)
-
-    const shieldGeometry = new THREE.SphereGeometry(2.8, 32, 32)
-    const shieldMaterial = new THREE.MeshBasicMaterial({
-      color: 0x00ff88,
-      transparent: true,
-      opacity: 0.15,
-      side: THREE.DoubleSide
-    })
-    const shield = new THREE.Mesh(shieldGeometry, shieldMaterial)
-    scene.add(shield)
-
-    const shieldRings = []
-    for (let i = 0; i < 3; i++) {
-      const ringGeometry = new THREE.TorusGeometry(2.8 + i * 0.1, 0.02, 8, 100)
-      const ringMaterial = new THREE.MeshBasicMaterial({
-        color: 0x00ff88,
+    // Create minimal floating particles
+    const particles = []
+    for (let i = 0; i < 30; i++) {
+      const geometry = new THREE.SphereGeometry(0.01, 4, 4)
+      const material = new THREE.MeshBasicMaterial({
+        color: 0x00d4ff,
         transparent: true,
-        opacity: 0.6
+        opacity: 0.1
       })
-      const ring = new THREE.Mesh(ringGeometry, ringMaterial)
-      ring.rotation.x = Math.PI / 2 + (i * Math.PI / 6)
-      ring.rotation.z = i * Math.PI / 3
-      shieldRings.push(ring)
-      scene.add(ring)
-    }
-
-    const attackParticles = []
-    const attackParticleCount = 20
-    
-    for (let i = 0; i < attackParticleCount; i++) {
-      const particleGeometry = new THREE.SphereGeometry(0.02, 8, 8)
-      const particleMaterial = new THREE.MeshBasicMaterial({
-        color: 0xff0040,
-        transparent: true,
-        opacity: 0.8
-      })
-      const particle = new THREE.Mesh(particleGeometry, particleMaterial)
+      const particle = new THREE.Mesh(geometry, material)
       
-      const angle = (i / attackParticleCount) * Math.PI * 2
-      const radius = 8 + Math.random() * 4
       particle.position.set(
-        Math.cos(angle) * radius,
-        (Math.random() - 0.5) * 6,
-        Math.sin(angle) * radius
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 15,
+        (Math.random() - 0.5) * 10
       )
       
       particle.userData = {
         velocity: new THREE.Vector3(
-          -Math.cos(angle) * 0.02,
           (Math.random() - 0.5) * 0.01,
-          -Math.sin(angle) * 0.02
-        ),
-        originalPosition: particle.position.clone()
+          (Math.random() - 0.5) * 0.01,
+          (Math.random() - 0.5) * 0.01
+        )
       }
       
-      attackParticles.push(particle)
+      particles.push(particle)
       scene.add(particle)
     }
 
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.4)
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.6)
     scene.add(ambientLight)
-    
-    const directionalLight = new THREE.DirectionalLight(0x00d4ff, 1)
-    directionalLight.position.set(5, 5, 5)
-    scene.add(directionalLight)
 
-    camera.position.z = 8
-
-    let shieldActive = false
-    let shieldActivationTime = 0
+    camera.position.z = 10
 
     const animate = () => {
       requestAnimationFrame(animate)
 
-      globe.rotation.y += 0.005
-      wireframe.rotation.y += 0.007
-
-      shieldRings.forEach((ring, index) => {
-        ring.rotation.y += 0.01 * (index + 1)
-        ring.rotation.x += 0.005
-      })
-
-      attackParticles.forEach(particle => {
+      particles.forEach(particle => {
         particle.position.add(particle.userData.velocity)
         
-        const distanceToCenter = particle.position.length()
-        
-        if (distanceToCenter < 3.2) {
-          if (!shieldActive) {
-            shieldActive = true
-            shieldActivationTime = Date.now()
-          }
-          
-          const direction = particle.position.normalize()
-          particle.position.copy(direction.multiplyScalar(3.2))
-          
-          particle.userData.velocity.reflect(direction)
-          particle.userData.velocity.multiplyScalar(0.8)
-        }
-        
-        if (distanceToCenter > 15) {
-          particle.position.copy(particle.userData.originalPosition)
-          const angle = Math.atan2(particle.position.z, particle.position.x)
-          particle.userData.velocity.set(
-            -Math.cos(angle) * 0.02,
-            (Math.random() - 0.5) * 0.01,
-            -Math.sin(angle) * 0.02
-          )
-        }
+        // Wrap around screen
+        if (particle.position.x > 10) particle.position.x = -10
+        if (particle.position.x < -10) particle.position.x = 10
+        if (particle.position.y > 7) particle.position.y = -7
+        if (particle.position.y < -7) particle.position.y = 7
       })
-
-      if (shieldActive) {
-        const timeSinceActivation = Date.now() - shieldActivationTime
-        const intensity = Math.max(0, 1 - timeSinceActivation / 1000)
-        
-        shield.material.opacity = 0.15 + intensity * 0.3
-        shieldRings.forEach(ring => {
-          ring.material.opacity = 0.6 + intensity * 0.4
-        })
-        
-        if (intensity <= 0) {
-          shieldActive = false
-        }
-      }
 
       renderer.render(scene, camera)
     }
@@ -188,19 +92,123 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f1419 100%)' }}>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cyber-black">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
       />
       
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto backdrop-blur-sm bg-black/20 rounded-3xl border border-white/10 shadow-2xl">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="py-12"
-        >
+      {/* PCB Board Background Pattern */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: `
+          linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(131, 56, 236, 0.02) 1px, transparent 1px),
+          linear-gradient(rgba(131, 56, 236, 0.02) 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px, 40px 40px, 120px 120px, 120px 120px',
+        backgroundPosition: '0 0, 0 0, 20px 20px, 20px 20px'
+      }}>
+        {/* PCB Circuit Traces */}
+        <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="circuit" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+              {/* Horizontal traces */}
+              <line x1="0" y1="50" x2="200" y2="50" stroke="#00d4ff" strokeWidth="1"/>
+              <line x1="0" y1="100" x2="200" y2="100" stroke="#8338ec" strokeWidth="1"/>
+              <line x1="0" y1="150" x2="200" y2="150" stroke="#00ff88" strokeWidth="1"/>
+              {/* Vertical traces */}
+              <line x1="50" y1="0" x2="50" y2="200" stroke="#00d4ff" strokeWidth="1"/>
+              <line x1="100" y1="0" x2="100" y2="200" stroke="#8338ec" strokeWidth="1"/>
+              <line x1="150" y1="0" x2="150" y2="200" stroke="#00ff88" strokeWidth="1"/>
+              {/* Connection pads */}
+              <circle cx="50" cy="50" r="3" fill="#00ff88"/>
+              <circle cx="100" cy="100" r="3" fill="#00d4ff"/>
+              <circle cx="150" cy="150" r="3" fill="#8338ec"/>
+              <circle cx="150" cy="50" r="3" fill="#00ff88"/>
+              <circle cx="50" cy="150" r="3" fill="#00d4ff"/>
+              {/* Chip components */}
+              <rect x="70" y="70" width="20" height="30" fill="none" stroke="#00d4ff" strokeWidth="1"/>
+              <rect x="120" y="30" width="25" height="15" fill="none" stroke="#8338ec" strokeWidth="1"/>
+              <rect x="30" y="120" width="15" height="25" fill="none" stroke="#00ff88" strokeWidth="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#circuit)"/>
+        </svg>
+      </div>
+
+      {/* PCB Component Overlays */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        {/* Microchips */}
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={`chip-${i}`}
+            className="absolute border border-cyber-primary/40 bg-cyber-primary/5 animate-pulse"
+            style={{
+              left: `${15 + Math.random() * 70}%`,
+              top: `${15 + Math.random() * 70}%`,
+              width: '20px',
+              height: '28px',
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${3 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+        
+        {/* Connection Pads */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={`pad-${i}`}
+            className="absolute bg-cyber-green/60 rounded-full animate-ping"
+            style={{
+              left: `${5 + Math.random() * 90}%`,
+              top: `${5 + Math.random() * 90}%`,
+              width: '6px',
+              height: '6px',
+              animationDelay: `${Math.random() * 4}s`,
+              animationDuration: `${4 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+
+        {/* Resistors */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`resistor-${i}`}
+            className="absolute border border-cyber-accent/40 bg-cyber-accent/10"
+            style={{
+              left: `${10 + Math.random() * 80}%`,
+              top: `${10 + Math.random() * 80}%`,
+              width: '12px',
+              height: '4px',
+              transform: `rotate(${Math.random() * 180}deg)`
+            }}
+          />
+        ))}
+      </div>
+      
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        {/* Transparent PCB Board Card */}
+        <div className="relative backdrop-blur-sm bg-gradient-to-br from-cyber-dark/30 via-transparent to-cyber-blue/20 rounded-3xl border border-cyber-primary/30 shadow-2xl overflow-hidden">
+          {/* PCB Board Texture Overlay */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyber-primary/10 to-cyber-accent/10"></div>
+            {/* Circuit trace overlay on card */}
+            <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50,50 L150,50 L150,100 L250,100" stroke="#00d4ff" strokeWidth="1" fill="none" opacity="0.3"/>
+              <path d="M100,0 L100,80 L200,80 L200,150" stroke="#8338ec" strokeWidth="1" fill="none" opacity="0.3"/>
+              <circle cx="100" cy="50" r="4" fill="#00ff88" opacity="0.4"/>
+              <circle cx="200" cy="100" r="4" fill="#00d4ff" opacity="0.4"/>
+              <rect x="80" y="30" width="15" height="20" fill="none" stroke="#00d4ff" strokeWidth="1" opacity="0.3"/>
+            </svg>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="py-12 relative z-10"
+          >
           <motion.div
             className="mb-8 flex justify-center"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -300,7 +308,8 @@ const Hero = () => {
               </motion.a>
             ))}
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div
