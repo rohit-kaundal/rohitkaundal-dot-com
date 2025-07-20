@@ -43,6 +43,14 @@ Single-page application with section-based components:
 - Security-focused contact form with honeypot protection
 - Smooth scroll behavior and custom scrollbar styling
 
+### Calendly Integration
+- **Appointment Link**: `https://calendly.com/rohit-vassagoconsultancy/30min`
+- **Integrated in**:
+  - Hero section: "Schedule a Call" CTA button
+  - Services section: "Schedule a Consultation" CTA button
+  - Contact section: "Schedule a Free Consultation" button with description
+- All Calendly links open in new tabs with proper security attributes
+
 ### Development Notes
 - Uses ES modules throughout
 - Custom CSS properties defined in `index.css` for consistent theming
