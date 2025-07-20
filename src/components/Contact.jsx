@@ -142,6 +142,29 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h4 className="text-2xl font-semibold mb-8 text-white">Connect With Me</h4>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mb-8"
+              >
+                <motion.a
+                  href="https://calendly.com/rohit-vassagoconsultancy/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 212, 255, 0.5)' }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyber-primary to-cyber-accent text-white font-semibold rounded-lg shadow-neon hover:shadow-neon-pink transition-all duration-300 mb-6"
+                >
+                  Schedule a Free Consultation
+                </motion.a>
+                <p className="text-gray-400 text-sm">
+                  Book a 30-minute call to discuss your cybersecurity needs
+                </p>
+              </motion.div>
+
               <div className="flex justify-center space-x-6">
                 {socialLinks.map((social, index) => (
                   <motion.a

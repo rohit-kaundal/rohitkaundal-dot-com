@@ -193,13 +193,15 @@ const Services = () => {
               your organization from evolving threats.
             </p>
             <motion.a
-              href="#contact"
+              href="https://calendly.com/rohit-vassagoconsultancy/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 212, 255, 0.5)' }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyber-primary to-cyber-accent text-white font-semibold rounded-lg shadow-neon hover:shadow-neon-pink transition-all duration-300"
             >
               <Target className="w-5 h-5 mr-2" />
-              Get Started Today
+              Schedule a Consultation
             </motion.a>
           </div>
         </motion.div>
