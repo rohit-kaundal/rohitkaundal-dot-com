@@ -217,7 +217,7 @@ const Hero = () => {
           >
             <div className="relative">
               <img
-                src="https://media.licdn.com/dms/image/v2/D5603AQE0SWOVqlIHeA/profile-displayphoto-scale_400_400/B56ZguYxMaHkAg-/0/1753124908268?e=1756339200&v=beta&t=9gVG7SE1iRNCGxUpzfgdDlCQ-BLCjH7he3K5xJVN-bc"
+                src="https://media.licdn.com/dms/image/v2/D5603AQE0SWOVqlIHeA/profile-displayphoto-scale_400_400/B56ZguYxMaHkAg-/0/1753124908268?e=1762387200&v=beta&t=2RYWQljKvUpAJ9oIwkMfJyVFAGj_-_Jmnjscb3Gdq4I"
                 alt="Rohit Kaundal"
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-cyber-primary shadow-neon object-cover"
               />
