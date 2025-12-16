@@ -1,12 +1,12 @@
 import React from 'react'
 import Hero from './components/Hero'
+import Manifesto from './components/Manifesto'
+import DomainsOfFocus from './components/DomainsOfFocus'
 import About from './components/About'
 import Contact from './components/Contact'
 import Navigation from './components/Navigation'
 
-// Note: Manifesto, DomainsOfFocus, Work components will be created in Phase 3-4
-// import Manifesto from './components/Manifesto'
-// import DomainsOfFocus from './components/DomainsOfFocus'
+// Note: Work component will be created in Phase 4
 // import Work from './components/Work'
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       <Navigation />
       <main>
         <Hero />
-        {/* <Manifesto /> */}
-        {/* <DomainsOfFocus /> */}
+        <Manifesto />
+        <DomainsOfFocus />
         <About />
         {/* <Work /> */}
         <Contact />
