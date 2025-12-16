@@ -3,11 +3,9 @@ import Hero from './components/Hero'
 import Manifesto from './components/Manifesto'
 import DomainsOfFocus from './components/DomainsOfFocus'
 import About from './components/About'
+import Work from './components/Work'
 import Contact from './components/Contact'
 import Navigation from './components/Navigation'
-
-// Note: Work component will be created in Phase 4
-// import Work from './components/Work'
 
 function App() {
   return (
@@ -18,7 +16,7 @@ function App() {
         <Manifesto />
         <DomainsOfFocus />
         <About />
-        {/* <Work /> */}
+        <Work />
         <Contact />
       </main>
     </div>

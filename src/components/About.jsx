@@ -1,155 +1,165 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { Shield, Award, Users, Zap } from 'lucide-react'
 
 const About = () => {
-  const stats = [
-    { icon: Shield, label: 'Years Experience', value: '17+' },
-    { icon: Award, label: 'Certifications', value: '6+' },
-    { icon: Users, label: 'Clients Protected', value: '100+' },
-    { icon: Zap, label: 'Malware Investigated', value: '500+' },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  }
-
   return (
-    <section id="about" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold mb-4"
-          >
-            About <span className="text-cyber-primary">Me</span>
-          </motion.h2>
-          <motion.div
-            variants={itemVariants}
-            className="w-24 h-1 bg-gradient-to-r from-cyber-primary to-cyber-accent mx-auto"
-          />
-        </motion.div>
+    <section id="about" className="py-32 px-6">
+      <div className="prose">
+        <h2 className="text-4xl mb-12 font-light">About</h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="glass p-8 rounded-2xl"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-cyber-primary">
-              Cybersecurity + GenAI Strategist for Startups
-            </h3>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                With over 17+ years of experience in cybersecurity, I help SaaS founders and small teams 
-                secure their cloud infra, automate compliance, and sleep better at night - without hiring 
-                an expensive security team.
-              </p>
-              <p>
-                My mission is to democratize security automation using GenAI and empower founders to ship 
-                fast without fear. I work with SaaS startups (0-50 employees), founders gearing up for 
-                SOC2, ISO 27001, or investor scrutiny, and CTOs & DevOps engineers tired of spreadsheets 
-                and audit chaos.
-              </p>
-              <p>
-                Building ******** AI (coming soon) - a plug-in security scanner + AI chat + auto policy 
-                generation tool. Think "ChatGPT for Cloud Security Posture". Also maintaining k8s-scanner, 
-                an open-source agentless scanner for Kubernetes best practices and CVEs.
+        <div className="space-y-6 text-body leading-relaxed">
+          <p>
+            I believe that AI governance is the defining security challenge of this decade.
+          </p>
+
+          <p>
+            Not because AI is inherently dangerous—but because organizations are
+            deploying intelligent systems without the institutional architecture
+            to govern them.
+          </p>
+
+          <p>
+            They lack accountability frameworks for model behavior. They lack risk
+            postures that account for adversarial AI. They lack regulatory readiness
+            for AI-specific compliance regimes. They lack the ability to audit what
+            their models learn, use, and expose.
+          </p>
+
+          <p>My work addresses this gap.</p>
+
+          <hr className="border-institutional-border my-12" />
+
+          <p>
+            I spent the first decade of my career in digital forensics, cybercrime
+            investigation, and infrastructure security—learning how systems fail,
+            how adversaries think, and how governance collapses under pressure.
+          </p>
+
+          <p>
+            The second decade has been spent translating that operational reality
+            into governance doctrine: designing frameworks that allow boards,
+            regulators, and technical leaders to make defensible decisions about AI risk.
+          </p>
+
+          <p>
+            This is not about tools. Tools operationalize governance—they do not create it.
+          </p>
+
+          <p>
+            AIFortess, the platform I built, emerged from this principle: governance
+            must be codified, not improvised. It translates regulatory intent into
+            enforceable technical controls, allowing organizations to govern AI systems
+            the way they govern financial systems—with transparency, accountability,
+            and auditability.
+          </p>
+
+          <p>
+            But the platform is secondary. The primary work is defining what "secure AI"
+            actually means in a world where regulators, adversaries, and enterprises
+            are all moving at different speeds.
+          </p>
+
+          <hr className="border-institutional-border my-12" />
+
+          <p className="font-medium">
+            I advise organizations that need to answer questions like:
+          </p>
+
+          <ul className="space-y-2 list-disc list-inside">
+            <li>How do we prove our AI system is compliant before regulators define compliance?</li>
+            <li>How do we defend models against adversarial manipulation?</li>
+            <li>Who is accountable when an AI system fails?</li>
+            <li>What does "AI security" mean beyond penetration testing?</li>
+          </ul>
+
+          <p className="text-institutional-white/60 italic">
+            This work is institutional, not transactional. It is about building
+            worldviews, not dashboards.
+          </p>
+
+          <hr className="border-institutional-border my-12" />
+
+          <h3 className="text-2xl mb-6">Background & Standards Alignment</h3>
+
+          <p>
+            My work is grounded in 17 years of operational security practice across
+            digital forensics, infrastructure security, and regulated industries.
+          </p>
+
+          <p>
+            I hold certifications in information security management (ISO 27001),
+            network security, penetration testing, and GDPR compliance. I have worked
+            with law enforcement, enterprise security teams, and regulatory bodies.
+          </p>
+
+          <p>
+            But credentials do not create governance frameworks—principles do.
+          </p>
+
+          <p>
+            The value I bring is not in certifications, but in the ability to translate
+            operational security reality into institutional doctrine that withstands
+            regulatory, adversarial, and fiduciary scrutiny.
+          </p>
+
+          <hr className="border-institutional-border my-12" />
+
+          <h3 className="text-2xl mb-6">Areas of Application</h3>
+
+          <div className="space-y-8">
+            <div>
+              <h4 className="text-lg font-medium mb-2">Advisory & Governance Design</h4>
+              <p className="text-institutional-white/70">
+                Working with boards, CISOs, and general counsel to define AI risk postures,
+                accountability frameworks, and regulatory strategies. This is institutional
+                architecture, not implementation.
               </p>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-6"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="glass p-6 rounded-xl text-center group cursor-pointer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <stat.icon className="w-8 h-8 text-cyber-primary mx-auto mb-4 group-hover:text-cyber-accent transition-colors duration-300" />
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="glass p-8 rounded-2xl"
-        >
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            <span className="text-cyber-primary">Core</span> Philosophy
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyber-primary to-cyber-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-white">Security is an Enabler</h4>
-              <p className="text-gray-400 text-sm">
-                Security should accelerate development, not block it. 
-                Building tools that make security seamless and automated.
+            <div>
+              <h4 className="text-lg font-medium mb-2">AI Security & Defense Strategy</h4>
+              <p className="text-institutional-white/70">
+                Designing adversarial threat models for AI systems, defining what "defensible"
+                means in the context of model manipulation, data poisoning, and inference
+                attacks. Translating academic research into operational doctrine.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyber-accent to-cyber-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-white">AI Amplifies Engineers</h4>
-              <p className="text-gray-400 text-sm">
-                AI should amplify engineers, not replace them. 
-                Automation scales trust and enables faster, more secure development.
+
+            <div>
+              <h4 className="text-lg font-medium mb-2">Regulatory & Compliance Translation</h4>
+              <p className="text-institutional-white/70">
+                Interpreting emerging AI regulations (EU AI Act, algorithmic accountability
+                mandates, sector-specific rules) and translating them into actionable
+                governance requirements. This is not checklist compliance—it is strategic
+                positioning ahead of enforcement.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyber-secondary to-cyber-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-lg font-semibold mb-2 text-white">Build in Public</h4>
-              <p className="text-gray-400 text-sm">
-                Done &gt; Perfect. Build in public, talk to users, ship fast. 
-                Open-source contributions that advance the security community.
+
+            <div>
+              <h4 className="text-lg font-medium mb-2">Institutional Readiness Assessments</h4>
+              <p className="text-institutional-white/70">
+                Evaluating whether an organization's governance, documentation, and control
+                environment can withstand regulatory scrutiny, investor due diligence, or
+                adversarial pressure. Identifying gaps that create existential risk, not
+                just technical debt.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-medium mb-2">Platform-Enabled Governance</h4>
+              <p className="text-institutional-white/70">
+                For organizations that need governance operationalized at scale, AIFortess
+                provides the infrastructure to codify policies, automate compliance evidence
+                generation, and maintain audit trails for AI system behavior. This is
+                governance-as-code, not security-as-a-service.
               </p>
             </div>
           </div>
-        </motion.div>
+
+          <p className="text-institutional-white/60 italic mt-12">
+            This is not consulting in the traditional sense. It is advisory work for
+            organizations that understand governance is not optional.
+          </p>
+        </div>
       </div>
     </section>
   )

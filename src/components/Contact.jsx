@@ -1,217 +1,92 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Github, 
-  Linkedin, 
-  Twitter,
-  Shield
-} from 'lucide-react'
 
 const Contact = () => {
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'rohit@vassagoconsultancy.com',
-      href: 'mailto:rohit@vassagoconsultancy.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91-981-648-3986',
-      href: 'tel:+919816483986'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'India | Dubai',
-      href: null
-    }
-  ]
-
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com/rohit-kaundal', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/rohitkaundal', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/rohitkaundal', label: 'Twitter' },
-  ]
-
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Get In <span className="text-cyber-primary">Touch</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyber-primary to-cyber-accent mx-auto mb-6" />
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Ready to secure your digital infrastructure? Let's discuss how I can help protect your organization.
-          </p>
-        </motion.div>
+    <section id="contact" className="py-32 px-6">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl mb-12 font-light">Contact</h2>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h3 className="text-3xl font-bold mb-12 text-white">
-              Let's Start a <span className="text-cyber-primary">Conversation</span>
-            </h3>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.label}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="glass p-6 rounded-xl group cursor-pointer"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyber-primary to-cyber-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <info.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-white font-semibold text-lg mb-2">{info.label}</h4>
-                  {info.href ? (
-                    <a
-                      href={info.href}
-                      className="text-gray-400 hover:text-cyber-primary transition-colors duration-200 break-all"
-                    >
-                      {info.value}
-                    </a>
-                  ) : (
-                    <span className="text-gray-400">{info.value}</span>
-                  )}
-                </motion.div>
-              ))}
+        <div className="space-y-8">
+          <div>
+            <p className="text-body mb-4 text-institutional-white/70">
+              For advisory inquiries, institutional governance projects, or strategic collaboration:
+            </p>
+            <a
+              href="mailto:rohit@vassagoconsultancy.com"
+              className="text-2xl text-institutional-accent hover:text-institutional-gold transition-colors"
+            >
+              rohit@vassagoconsultancy.com
+            </a>
+          </div>
+
+          <div className="pt-8 space-y-4 text-institutional-white/60">
+            <p className="text-sm leading-relaxed">
+              I work with organizations facing AI governance questions that cannot be
+              answered with existing frameworks.
+            </p>
+
+            <p className="text-sm leading-relaxed">
+              This is institutional work—not project-based consulting.
+            </p>
+
+            <p className="text-sm leading-relaxed">
+              If your organization needs tactical implementation, vendor services, or
+              short-term security assessments, there are better-suited resources available.
+            </p>
+          </div>
+
+          <hr className="border-institutional-border my-12" />
+
+          <div className="space-y-4 text-institutional-white/60">
+            <p className="text-sm">
+              PGP Key Fingerprint:
+              <a
+                href="https://keybase.io/rohitkaundal/pgp_keys.asc"
+                className="text-institutional-accent hover:underline ml-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                0BE2 9B1D 0BE2 E92B 94A4 457D 7930 6F4C 3DDE B1BD
+              </a>
+            </p>
+
+            <div className="flex space-x-6 text-sm">
+              <a
+                href="https://github.com/rohit-kaundal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-institutional-accent transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/rohitkaundal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-institutional-accent transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://twitter.com/rohitkaundal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-institutional-accent transition-colors"
+              >
+                Twitter/X
+              </a>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="glass p-8 rounded-2xl mb-12"
-            >
-              <h4 className="text-2xl font-semibold mb-6 text-white flex items-center justify-center">
-                <Shield className="w-6 h-6 mr-3 text-cyber-primary" />
-                Why Choose Me?
-              </h4>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  '17+ years of cybersecurity expertise',
-                  'Founder of Vassago Consultancy',
-                  'Expert in digital forensics investigation',
-                  'ISMS compliance specialist',
-                  'AI & Blockchain security auditing',
-                  'Proven track record with law enforcement'
-                ].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-center text-left"
-                  >
-                    <div className="w-3 h-3 bg-cyber-primary rounded-full mr-4 flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <h4 className="text-2xl font-semibold mb-8 text-white">Connect With Me</h4>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-8"
-              >
-                <motion.a
-                  href="https://calendly.com/rohit-vassagoconsultancy/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 212, 255, 0.5)' }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyber-primary to-cyber-accent text-white font-semibold rounded-lg shadow-neon hover:shadow-neon-pink transition-all duration-300 mb-6"
-                >
-                  Schedule a Free Consultation
-                </motion.a>
-                <p className="text-gray-400 text-sm">
-                  Book a 30-minute call to discuss your cybersecurity needs
-                </p>
-              </motion.div>
-
-              <div className="flex justify-center space-x-6">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.2, y: -5 }}
-                    className="w-16 h-16 bg-gradient-to-br from-cyber-primary to-cyber-accent rounded-xl flex items-center justify-center hover:shadow-neon transition-all duration-300"
-                  >
-                    <social.icon className="w-8 h-8 text-white" />
-                    <span className="sr-only">{social.label}</span>
-                  </motion.a>
-                ))}
-              </div>
-              <p className="text-gray-400 mt-6">
-                Feel free to reach out through any of these channels for cybersecurity consultation and services.
-              </p>
-            </motion.div>
-          </motion.div>
+            <p className="text-sm pt-4">
+              Location: India | Dubai
+            </p>
+          </div>
         </div>
 
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 pt-8 border-t border-gray-800 text-center"
-        >
-          <p className="text-gray-400 mb-4">
-            © 2025 Rohit Kaundal. Cybersecurity Professional.
-          </p>
-          <p className="text-sm text-gray-500 mb-2" >
-            <a target="_blank" rel="noopener noreferrer" href="https://keybase.io/rohitkaundal/pgp_keys.asc">
-            PGP Key Fingerprint: 0BE2 9B1D 0BE2 E92B 94A4 457D 7930 6F4C 3DDE B1BD
-            </a>
-          </p>
-          <p className="text-sm text-gray-500">
-            Built with React, Tailwind CSS, and Framer Motion. 
-            Deployed with security best practices in mind.
-          </p>
-        </motion.div>
+        <footer className="mt-24 pt-12 border-t border-institutional-border text-sm text-institutional-white/50">
+          <p>© 2025 Rohit Kaundal</p>
+          <p className="mt-2">AI Governance & Cyber Defense Authority</p>
+        </footer>
       </div>
     </section>
   )
