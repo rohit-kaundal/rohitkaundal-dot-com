@@ -7,32 +7,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        cyber: {
-          black: '#0a0a0a',
-          dark: '#1a1a2e',
-          blue: '#0f1419',
-          primary: '#00d4ff',
-          secondary: '#ff006e',
-          accent: '#8338ec',
-          green: '#39ff14',
+        institutional: {
+          charcoal: '#0A0E1A',
+          white: '#F5F5F5',
+          accent: '#6B7A99',
+          gold: '#B8956A',
+          border: '#1F2937',
+          hover: '#1A202E',
         },
       },
       fontFamily: {
+        sans: ['Space Grotesk', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['JetBrains Mono', 'Courier New', 'monospace'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      backgroundImage: {
-        'cyber-gradient': 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f1419 100%)',
-        'neon-gradient': 'linear-gradient(45deg, #00d4ff, #ff006e, #8338ec)',
+      fontSize: {
+        'body': ['18px', { lineHeight: '1.8' }],
+        'body-lg': ['20px', { lineHeight: '1.75' }],
       },
       boxShadow: {
-        'neon': '0 0 20px rgba(0, 212, 255, 0.5)',
-        'neon-pink': '0 0 20px rgba(255, 0, 110, 0.5)',
-        'glass': '0 8px 32px rgba(31, 38, 135, 0.37)',
+        'subtle': '0 1px 3px rgba(0, 0, 0, 0.12)',
+        'card': '0 2px 8px rgba(0, 0, 0, 0.08)',
       },
-      backdropBlur: {
-        xs: '2px',
-      }
     },
   },
   plugins: [],

@@ -15,28 +15,17 @@ html, body {
 }
 
 body {
-  background: #0a0a0a;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  background: #0A0E1A;
+  color: #F5F5F5;
+  font-family: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* Show cursor on interactive elements */
-button, a, input, textarea, select {
-  cursor: pointer !important;
-}
-
-/* Hide cursor on mobile devices */
-@media (hover: none) and (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
+  cursor: auto;
 }
 
 ::selection {
-  background: rgba(0, 212, 255, 0.3);
+  background: rgba(107, 122, 153, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -44,31 +33,82 @@ button, a, input, textarea, select {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+  background: #1F2937;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00d4ff;
+  background: #6B7A99;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0099cc;
+  background: #B8956A;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Editorial content container */
+.prose {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.neon-text {
-  text-shadow: 0 0 10px currentColor;
+/* Minimal card */
+.minimal-card {
+  background: rgba(31, 41, 55, 0.3);
+  border: 1px solid rgba(107, 122, 153, 0.15);
+  border-radius: 4px;
 }
 
-.cyber-grid {
-  background-image: 
-    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+/* Typography scale */
+h1, h2, h3 {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Links */
+a {
+  color: #6B7A99;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #B8956A;
+}
+
+/* Section spacing */
+section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  body { font-size: 17px; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 4rem; }
+  body { font-size: 20px; }
+  section {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
 }

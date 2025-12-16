@@ -1,27 +1,24 @@
 import React from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
-import Skills from './components/Skills'
-import Services from './components/Services'
-import Certifications from './components/Certifications'
-import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Navigation from './components/Navigation'
-import MouseTrail from './components/MouseTrail'
+
+// Note: Manifesto, DomainsOfFocus, Work components will be created in Phase 3-4
+// import Manifesto from './components/Manifesto'
+// import DomainsOfFocus from './components/DomainsOfFocus'
+// import Work from './components/Work'
 
 function App() {
   return (
-    <div className="min-h-screen bg-cyber-black text-white overflow-x-hidden">
-      <div className="cyber-grid fixed inset-0 pointer-events-none opacity-20"></div>
-      <MouseTrail />
+    <div className="min-h-screen bg-institutional-charcoal text-institutional-white overflow-x-hidden">
       <Navigation />
-      <main className="relative z-10">
+      <main>
         <Hero />
+        {/* <Manifesto /> */}
+        {/* <DomainsOfFocus /> */}
         <About />
-        <Skills />
-        <Services />
-        <Certifications />
-        <Projects />
+        {/* <Work /> */}
         <Contact />
       </main>
     </div>
