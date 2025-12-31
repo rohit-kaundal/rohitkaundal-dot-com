@@ -12,10 +12,10 @@ const Contact = () => {
               For advisory inquiries, institutional governance projects, or strategic collaboration:
             </p>
             <a
-              href="mailto:rohit@vassagoconsultancy.com"
+              href="mailto:rohit@aifortess.com"
               className="text-2xl text-institutional-accent hover:text-institutional-gold transition-colors"
             >
-              rohit@vassagoconsultancy.com
+              rohit@aifortess.com
             </a>
           </div>
 

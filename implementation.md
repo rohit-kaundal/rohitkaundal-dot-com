@@ -369,7 +369,7 @@ CONTACT
 For advisory inquiries, institutional governance projects,
 or strategic collaboration:
 
-rohit@vassagoconsultancy.com
+rohit@aifortess.com
 
 I work with organizations facing AI governance questions
 that cannot be answered with existing frameworks.
@@ -904,7 +904,7 @@ CONTACT
 
 For advisory inquiries, institutional governance projects, or strategic collaboration:
 
-rohit@vassagoconsultancy.com
+rohit@aifortess.com
 
 I work with organizations facing AI governance questions that cannot be
 answered with existing frameworks.
