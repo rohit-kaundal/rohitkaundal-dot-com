@@ -9,34 +9,30 @@ const Manifesto = () => {
         </h2>
 
         <div className="space-y-6 text-body leading-relaxed">
-          <p>AI governance is the defining security challenge of this decade.</p>
+          <p>AI governance is emerging as one of the defining security challenges of this decade.</p>
 
           <p>
-            Not because AI is inherently dangerous—but because organizations
-            are deploying intelligent systems without the institutional
-            architecture to govern them.
+            Not because AI is inherently dangerous —
+            but because intelligent systems are being deployed faster than the structures needed to govern them.
           </p>
 
-          <p>
-            They lack accountability frameworks for model behavior. They lack
-            risk postures that account for adversarial AI. They lack regulatory
-            readiness for compliance regimes that do not yet exist.
-          </p>
+          <p>The problems are real and recurring:</p>
+
+          <ul className="list-disc list-inside space-y-2 text-institutional-white/80">
+            <li>Accountability for model behavior remains undefined in most organizations</li>
+            <li>Risk postures rarely account for adversarial AI scenarios</li>
+            <li>Regulatory scrutiny is arriving before teams know what readiness looks like</li>
+          </ul>
 
           <p>
-            My work addresses this gap—not through tools, but through governance
-            doctrine that tools can operationalize.
-          </p>
-
-          <p>
-            I define what "secure AI" means for boards, regulators, and
-            technical leaders who must make defensible decisions about
-            systems they do not fully control.
+            My work focuses on closing this gap — not through tooling or frameworks alone,
+            but by helping practitioners reason clearly about how AI systems should be
+            secured, governed, and evaluated in practice.
           </p>
 
           <p className="text-institutional-white/60 italic">
-            This is not consulting. It is institutional advisory work for
-            organizations that understand governance is not optional.
+            The goal is not theoretical governance.
+            It is defensible decision-making under real-world constraints.
           </p>
         </div>
       </div>
