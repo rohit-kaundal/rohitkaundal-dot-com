@@ -56,6 +56,7 @@ Single-page application with section-based components:
 - **Positioning**: AI Governance & Cyber Defense Authority (not consultant)
 - **Tone**: Institutional, doctrine-driven, selective
 - **Navigation Flow**: Home → Manifesto → Work → About → Contact
+- **Contact Email**: rohit@aifortess.com
 - **No Calendly CTAs**: Email-first contact strategy
 - **No startup language**: Removed "SaaS", "founders", "fast-growing" terminology
 - **Selective copy**: "This is institutional work—not project-based consulting"
