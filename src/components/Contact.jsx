@@ -9,7 +9,9 @@ const Contact = () => {
         <div className="space-y-8">
           <div>
             <p className="text-body mb-4 text-institutional-white/70">
-              For advisory inquiries, institutional governance projects, or strategic collaboration:
+              If this work resonates — whether you're building AI systems, advising teams
+              navigating governance, or thinking through these problems independently —
+              I'm open to conversations.
             </p>
             <a
               href="mailto:rohit@aifortess.com"
@@ -17,22 +19,6 @@ const Contact = () => {
             >
               rohit@aifortess.com
             </a>
-          </div>
-
-          <div className="pt-8 space-y-4 text-institutional-white/60">
-            <p className="text-sm leading-relaxed">
-              I work with organizations facing AI governance questions that cannot be
-              answered with existing frameworks.
-            </p>
-
-            <p className="text-sm leading-relaxed">
-              This is institutional work—not project-based consulting.
-            </p>
-
-            <p className="text-sm leading-relaxed">
-              If your organization needs tactical implementation, vendor services, or
-              short-term security assessments, there are better-suited resources available.
-            </p>
           </div>
 
           <hr className="border-institutional-border my-12" />
@@ -85,7 +71,6 @@ const Contact = () => {
 
         <footer className="mt-24 pt-12 border-t border-institutional-border text-sm text-institutional-white/50">
           <p>© 2025 Rohit Kaundal</p>
-          <p className="mt-2">AI Governance & Cyber Defense Authority</p>
         </footer>
       </div>
     </section>

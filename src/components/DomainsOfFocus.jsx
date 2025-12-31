@@ -4,19 +4,19 @@ const DomainsOfFocus = () => {
   const domains = [
     {
       title: 'AI Governance & Model Security',
-      description: 'Defining the standards, controls, and accountability structures that make AI systems auditable and defensible. This includes adversarial robustness, model provenance, training data governance, and post-deployment risk management.'
+      description: 'Exploring the controls, documentation practices, and accountability structures that make AI systems auditable and defensible. This includes work on adversarial robustness, model provenance, training data integrity, and post-deployment risk.'
     },
     {
-      title: 'Cyber Risk & Institutional Accountability',
-      description: 'Translating technical vulnerabilities into board-level risk language. Designing governance frameworks that align security postures with fiduciary duty, regulatory expectations, and enterprise risk tolerance.'
+      title: 'Cyber Risk & Decision Support',
+      description: 'Translating technical vulnerabilities into language that supports governance decisions. Designing structures that help technical leaders and operators understand exposure, responsibility, and control boundaries.'
     },
     {
-      title: 'Regulatory Readiness for Intelligent Systems',
-      description: 'Preparing organizations for AI-specific compliance regimes—EU AI Act, algorithmic accountability laws, sector-specific regulations. Building documentation, audit trails, and control environments before mandates arrive.'
+      title: 'Regulatory Interpretation',
+      description: 'Helping teams prepare for emerging AI-specific regulations by building documentation, audit trails, and governance practices before enforcement timelines arrive.'
     },
     {
       title: 'Secure Intelligence Infrastructure',
-      description: 'Architecting cloud and data environments that support AI workloads while maintaining confidentiality, integrity, and sovereignty. Addressing supply chain risk, vendor dependencies, and cross-border data governance.'
+      description: 'Designing cloud and data environments that support AI workloads while addressing confidentiality, integrity, supply chain risk, and cross-border data considerations.'
     }
   ]
 

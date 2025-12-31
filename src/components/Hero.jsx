@@ -15,19 +15,18 @@ const Hero = () => {
         </h1>
 
         <p className="text-2xl mb-6 text-institutional-accent font-light">
-          AI Governance & Cyber Defense Authority
+          Designing Secure & Governable AI Systems
         </p>
 
         <p className="text-xl mb-12 text-institutional-white/80 leading-relaxed">
-          The question is no longer whether AI systems will be attacked,
-          but whether they were designed to be defensible.
+          The question is no longer whether AI systems will be attacked —
+          but whether they were designed to be defensible, auditable, and accountable in the first place.
         </p>
 
         <p className="text-lg text-institutional-white/70 leading-relaxed mb-12">
-          I work at the intersection of artificial intelligence, cyber risk,
-          and institutional accountability—defining the governance frameworks
-          that make AI systems auditable, defensible, and aligned with
-          regulatory reality.
+          I work at the intersection of artificial intelligence, cyber risk, and governance —
+          exploring what it means to deploy intelligent systems responsibly when regulation,
+          adversaries, and technology evolve at different speeds.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">

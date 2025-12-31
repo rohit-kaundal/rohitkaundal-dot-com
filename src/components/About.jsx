@@ -8,157 +8,116 @@ const About = () => {
 
         <div className="space-y-6 text-body leading-relaxed">
           <p>
-            I believe that AI governance is the defining security challenge of this decade.
+            I believe the hardest part of AI security is not the technology —
+            it is the absence of clear governance under pressure.
           </p>
 
           <p>
-            Not because AI is inherently dangerous—but because organizations are
-            deploying intelligent systems without the institutional architecture
-            to govern them.
+            I began my career in digital forensics, cybercrime investigation, and
+            infrastructure security. That work taught me how systems fail, how
+            adversaries exploit ambiguity, and how governance collapses when
+            accountability is unclear.
           </p>
 
           <p>
-            They lack accountability frameworks for model behavior. They lack risk
-            postures that account for adversarial AI. They lack regulatory readiness
-            for AI-specific compliance regimes. They lack the ability to audit what
-            their models learn, use, and expose.
-          </p>
-
-          <p>My work addresses this gap.</p>
-
-          <hr className="border-institutional-border my-12" />
-
-          <p>
-            I spent the first decade of my career in digital forensics, cybercrime
-            investigation, and infrastructure security—learning how systems fail,
-            how adversaries think, and how governance collapses under pressure.
+            Over time, my focus shifted toward translating that operational reality
+            into practical frameworks — structures that help teams reason about AI
+            risk before incidents, audits, or regulations force the conversation.
           </p>
 
           <p>
-            The second decade has been spent translating that operational reality
-            into governance doctrine: designing frameworks that allow boards,
-            regulators, and technical leaders to make defensible decisions about AI risk.
+            This perspective led to AIFortess — a platform I'm building to codify
+            governance concepts into usable systems. The platform exists to support
+            governance, not replace it.
           </p>
-
-          <p>
-            This is not about tools. Tools operationalize governance—they do not create it.
-          </p>
-
-          <p>
-            AIFortess, the platform I built, emerged from this principle: governance
-            must be codified, not improvised. It translates regulatory intent into
-            enforceable technical controls, allowing organizations to govern AI systems
-            the way they govern financial systems—with transparency, accountability,
-            and auditability.
-          </p>
-
-          <p>
-            But the platform is secondary. The primary work is defining what "secure AI"
-            actually means in a world where regulators, adversaries, and enterprises
-            are all moving at different speeds.
-          </p>
-
-          <hr className="border-institutional-border my-12" />
-
-          <p className="font-medium">
-            I advise organizations that need to answer questions like:
-          </p>
-
-          <ul className="space-y-2 list-disc list-inside">
-            <li>How do we prove our AI system is compliant before regulators define compliance?</li>
-            <li>How do we defend models against adversarial manipulation?</li>
-            <li>Who is accountable when an AI system fails?</li>
-            <li>What does "AI security" mean beyond penetration testing?</li>
-          </ul>
 
           <p className="text-institutional-white/60 italic">
-            This work is institutional, not transactional. It is about building
-            worldviews, not dashboards.
+            Tools operationalize decisions.
+            They do not make them.
           </p>
 
           <hr className="border-institutional-border my-12" />
 
-          <h3 className="text-2xl mb-6">Background & Standards Alignment</h3>
+          <h3 className="text-2xl mb-6">The Questions I'm Working On</h3>
 
-          <p>
-            My work is grounded in 17 years of operational security practice across
-            digital forensics, infrastructure security, and regulated industries.
-          </p>
+          <ul className="space-y-2 list-disc list-inside">
+            <li>How can an organization demonstrate AI accountability before compliance standards fully mature?</li>
+            <li>What does "defensible AI" mean beyond penetration testing?</li>
+            <li>How should responsibility be defined when intelligent systems fail?</li>
+            <li>How can governance keep pace when AI systems evolve faster than oversight?</li>
+          </ul>
 
-          <p>
-            I hold certifications in information security management (ISO 27001),
-            network security, penetration testing, and GDPR compliance. I have worked
-            with law enforcement, enterprise security teams, and regulatory bodies.
-          </p>
-
-          <p>
-            But credentials do not create governance frameworks—principles do.
-          </p>
-
-          <p>
-            The value I bring is not in certifications, but in the ability to translate
-            operational security reality into institutional doctrine that withstands
-            regulatory, adversarial, and fiduciary scrutiny.
+          <p className="text-institutional-white/60 italic mt-8">
+            This work is systems-oriented, not transactional.
+            It prioritizes clarity, structure, and long-term defensibility.
           </p>
 
           <hr className="border-institutional-border my-12" />
 
-          <h3 className="text-2xl mb-6">Areas of Application</h3>
+          <h3 className="text-2xl mb-6">Background</h3>
+
+          <p>
+            My work is grounded in over a decade of operational security experience —
+            forensics, infrastructure security, and regulated environments.
+          </p>
+
+          <p>
+            I hold certifications in information security management, network security,
+            penetration testing, and data protection. These inform my thinking — but
+            they are not the foundation of it.
+          </p>
+
+          <p className="text-institutional-white/60 italic">
+            Governance frameworks endure because they reflect reality, not credentials.
+          </p>
+
+          <hr className="border-institutional-border my-12" />
+
+          <h3 className="text-2xl mb-6">How I Work</h3>
 
           <div className="space-y-8">
             <div>
-              <h4 className="text-lg font-medium mb-2">Advisory & Governance Design</h4>
+              <h4 className="text-lg font-medium mb-2">Governance Design</h4>
               <p className="text-institutional-white/70">
-                Working with boards, CISOs, and general counsel to define AI risk postures,
-                accountability frameworks, and regulatory strategies. This is institutional
-                architecture, not implementation.
+                Working with technical leaders to design AI risk postures, accountability
+                structures, and governance approaches suited to real-world constraints.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2">AI Security & Defense Strategy</h4>
+              <h4 className="text-lg font-medium mb-2">Security Reasoning for AI Systems</h4>
               <p className="text-institutional-white/70">
-                Designing adversarial threat models for AI systems, defining what "defensible"
-                means in the context of model manipulation, data poisoning, and inference
-                attacks. Translating academic research into operational doctrine.
+                Developing threat models for AI systems — including adversarial manipulation,
+                data poisoning, and inference risks — and translating research into practical
+                security thinking.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2">Regulatory & Compliance Translation</h4>
+              <h4 className="text-lg font-medium mb-2">Regulatory Translation</h4>
               <p className="text-institutional-white/70">
-                Interpreting emerging AI regulations (EU AI Act, algorithmic accountability
-                mandates, sector-specific rules) and translating them into actionable
-                governance requirements. This is not checklist compliance—it is strategic
-                positioning ahead of enforcement.
+                Helping teams interpret emerging AI regulations and convert them into
+                governance requirements that make sense operationally, not just on paper.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2">Institutional Readiness Assessments</h4>
+              <h4 className="text-lg font-medium mb-2">Readiness Assessments</h4>
               <p className="text-institutional-white/70">
-                Evaluating whether an organization's governance, documentation, and control
-                environment can withstand regulatory scrutiny, investor due diligence, or
-                adversarial pressure. Identifying gaps that create existential risk, not
-                just technical debt.
+                Evaluating whether governance, documentation, and controls can withstand
+                scrutiny — regulatory, investor, or adversarial.
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2">Platform-Enabled Governance</h4>
+              <h4 className="text-lg font-medium mb-2">Platform-Supported Governance</h4>
               <p className="text-institutional-white/70">
-                For organizations that need governance operationalized at scale, AIFortess
-                provides the infrastructure to codify policies, automate compliance evidence
-                generation, and maintain audit trails for AI system behavior. This is
-                governance-as-code, not security-as-a-service.
+                For practitioners who need governance operationalized consistently, AIFortess
+                provides infrastructure to codify policies, generate evidence, and maintain
+                audit trails for AI systems.
               </p>
             </div>
           </div>
-
-          <p className="text-institutional-white/60 italic mt-12">
-            This is not consulting in the traditional sense. It is advisory work for
-            organizations that understand governance is not optional.
-          </p>
         </div>
       </div>
     </section>
