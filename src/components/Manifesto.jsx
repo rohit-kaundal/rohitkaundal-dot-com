@@ -2,11 +2,12 @@ import React from 'react'
 
 const Manifesto = () => {
   return (
-    <section id="manifesto" className="py-32 px-6">
+    <section id="perspective" className="py-32 px-6">
       <div className="prose">
-        <h2 className="text-4xl mb-12 font-light">
-          What This Work Is
-        </h2>
+        <div className="mb-12">
+          <div className="text-xs font-mono tracking-[0.2em] text-institutional-accent/70 mb-3">01</div>
+          <h2 className="text-4xl font-light">Perspective</h2>
+        </div>
 
         <div className="space-y-6 text-body leading-relaxed">
           <p>AI governance is emerging as one of the defining security challenges of this decade.</p>

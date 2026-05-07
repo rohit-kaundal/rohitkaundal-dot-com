@@ -4,7 +4,10 @@ const About = () => {
   return (
     <section id="about" className="py-32 px-6">
       <div className="prose">
-        <h2 className="text-4xl mb-12 font-light">About</h2>
+        <div className="mb-12">
+          <div className="text-xs font-mono tracking-[0.2em] text-institutional-accent/70 mb-3">03</div>
+          <h2 className="text-4xl font-light">About</h2>
+        </div>
 
         <div className="space-y-6 text-body leading-relaxed">
           <p>

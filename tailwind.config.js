@@ -8,12 +8,12 @@ export default {
     extend: {
       colors: {
         institutional: {
-          charcoal: '#0A0E1A',
-          white: '#F5F5F5',
-          accent: '#6B7A99',
-          gold: '#B8956A',
-          border: '#1F2937',
-          hover: '#1A202E',
+          charcoal: '#0B0B0E',
+          white: '#EDEDED',
+          accent: '#C2A47A',
+          gold: '#D4B98E',
+          border: '#1E1E26',
+          hover: '#14141A',
         },
       },
       fontFamily: {

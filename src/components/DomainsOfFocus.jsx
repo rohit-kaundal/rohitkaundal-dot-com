@@ -23,9 +23,10 @@ const DomainsOfFocus = () => {
   return (
     <section id="domains" className="py-32 px-6 bg-institutional-hover">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl mb-16 text-center font-light">
-          Domains of Focus
-        </h2>
+        <div className="mb-16 text-center">
+          <div className="text-xs font-mono tracking-[0.2em] text-institutional-accent/70 mb-3">02</div>
+          <h2 className="text-4xl font-light">Domains of Focus</h2>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {domains.map((domain) => (
