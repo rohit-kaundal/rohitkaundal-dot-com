@@ -11,13 +11,15 @@ function App() {
   return (
     <div className="min-h-screen bg-institutional-charcoal text-institutional-white overflow-x-hidden">
       <Navigation />
-      <main>
-        <Hero />
-        <Manifesto />
-        <DomainsOfFocus />
-        <About />
-        <Work />
-        <Contact />
+      <main className="px-4 md:px-8 py-24">
+        <div className="glass-plate glass-plate--sheet max-w-7xl mx-auto">
+          <Hero />
+          <Manifesto />
+          <DomainsOfFocus />
+          <About />
+          <Work />
+          <Contact />
+        </div>
       </main>
     </div>
   )
