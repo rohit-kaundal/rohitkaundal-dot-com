@@ -3,21 +3,23 @@ import React from 'react'
 const Work = () => {
   const projects = [
     {
-      title: 'AIFortess — Governance Infrastructure for AI Systems',
-      description: 'A platform that helps teams operationalize AI governance — translating regulatory intent into enforceable controls and audit-ready evidence.',
+      title: 'AIFortess — Systems for AI Security and Governance',
+      description: 'A product-first company building tools and frameworks for teams working at the intersection of AI, security, and governance. Not consulting, not generic AI — opinionated systems built for practitioners who need clarity.',
       products: [
         {
           name: 'AIFortess Assessor',
-          summary: 'ISO 42001 readiness for small teams. Risk assessment, gap identification, and structured export workflows.'
+          summary: 'A lightweight ISO 42001 readiness tool for independent consultants and small AI teams. Define AI systems, assess risks and controls, identify gaps, and export readiness insights — no spreadsheets, no enterprise bloat.'
         },
         {
           name: 'Vertias AI',
-          summary: 'Cloud security posture across AWS, GCP, and Azure with CIS, SOC 2, and NIST scanning and AI-assisted remediation.'
+          summary: 'An AI agent authorization and governance platform. Sits between your AI agents and the tools they use — enforcing least privilege, routing risky actions to humans for approval, and keeping a tamper-evident audit trail of every action. Built for teams deploying agents in production who need real control. Waitlist open at vertias.ai.'
+        },
+        {
+          name: 'AIFortess Compass',
+          summary: 'A free 3-minute Agentic AI Readiness Scorecard for AI and security leaders. 17 questions across deployment inventory, governance controls, and regulatory readiness. Instant score out of 100 with a personalized next step. Based on OWASP State of Agentic AI Security and Governance 2.01.'
         }
       ],
-      details: [
-        'Status: In active development. Early access available.'
-      ],
+      details: [],
       link: 'https://aifortess.com',
       linkLabel: 'Visit aifortess.com →'
     },

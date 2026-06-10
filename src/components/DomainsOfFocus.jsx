@@ -21,7 +21,7 @@ const DomainsOfFocus = () => {
   ]
 
   return (
-    <section id="domains" className="py-32 px-6 bg-institutional-hover">
+    <section id="domains" className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="mb-16 text-center">
           <div className="text-xs font-mono tracking-[0.2em] text-institutional-accent/70 mb-3">02</div>

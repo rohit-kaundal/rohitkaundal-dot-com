@@ -22,6 +22,27 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
   cursor: auto;
+  position: relative;
+}
+
+/* Ambient backdrop so the glass plates have something to refract */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 18% 22%, rgba(194, 164, 122, 0.10), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 82% 30%, rgba(107, 122, 153, 0.10), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 30% 78%, rgba(194, 164, 122, 0.07), transparent 65%),
+    radial-gradient(ellipse 45% 35% at 78% 85%, rgba(212, 185, 142, 0.08), transparent 60%);
+}
+
+/* Make sure section content sits above the ambient backdrop */
+main, nav {
+  position: relative;
+  z-index: 1;
 }
 
 ::selection {
@@ -57,6 +78,72 @@ body {
   background: rgba(30, 30, 38, 0.3);
   border: 1px solid rgba(194, 164, 122, 0.15);
   border-radius: 4px;
+}
+
+/* Frosted glass plate — content reads as if etched into glass */
+.glass-plate {
+  position: relative;
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03),
+    0 30px 70px -20px rgba(0, 0, 0, 0.55),
+    0 10px 30px -10px rgba(0, 0, 0, 0.35);
+  padding: 3rem;
+}
+
+/* Subtle diagonal sheen across the plate */
+.glass-plate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 28%,
+    transparent 55%,
+    rgba(255, 255, 255, 0.015) 78%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  mix-blend-mode: screen;
+}
+
+/* Keep content above the sheen overlay */
+.glass-plate > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Full-page sheet variant: one continuous plate wrapping all sections */
+.glass-plate--sheet {
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Sections inside the sheet don't need section-spacing padding overrides */
+.glass-plate--sheet > section:first-child {
+  padding-top: 6rem;
+}
+
+.glass-plate--sheet > section:last-child {
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .glass-plate {
+    padding: 1.75rem;
+  }
+  .glass-plate--sheet {
+    padding: 0;
+    border-radius: 6px;
+  }
 }
 
 /* Typography scale */
