@@ -11,10 +11,6 @@ const Work = () => {
           summary: 'A lightweight ISO 42001 readiness tool for independent consultants and small AI teams. Define AI systems, assess risks and controls, identify gaps, and export readiness insights — no spreadsheets, no enterprise bloat.'
         },
         {
-          name: 'Vertias AI',
-          summary: 'An AI agent authorization and governance platform. Sits between your AI agents and the tools they use — enforcing least privilege, routing risky actions to humans for approval, and keeping a tamper-evident audit trail of every action. Built for teams deploying agents in production who need real control. Waitlist open at vertias.ai.'
-        },
-        {
           name: 'AIFortess Compass',
           summary: 'A free 3-minute Agentic AI Readiness Scorecard for AI and security leaders. 17 questions across deployment inventory, governance controls, and regulatory readiness. Instant score out of 100 with a personalized next step. Based on OWASP State of Agentic AI Security and Governance 2.01.'
         }
