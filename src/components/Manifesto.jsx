@@ -1,40 +1,63 @@
 import React from 'react'
+import Reveal from './Reveal'
+import SectionHeading from './SectionHeading'
+
+const failures = [
+  'Accountability for model behaviour remains undefined in most organisations.',
+  'Risk postures rarely account for adversarial AI scenarios.',
+  'Regulatory scrutiny arrives before teams know what readiness looks like.',
+]
 
 const Manifesto = () => {
   return (
     <section id="perspective" className="py-32 px-6">
       <div className="prose">
-        <div className="mb-12">
-          <div className="text-xs font-mono tracking-[0.2em] text-institutional-accent/70 mb-3">01</div>
-          <h2 className="text-4xl font-light">Perspective</h2>
-        </div>
+        <SectionHeading number="01" title="Perspective" />
 
-        <div className="space-y-6 text-body leading-relaxed">
-          <p>AI governance is emerging as one of the defining security challenges of this decade.</p>
+        <div className="space-y-7 text-body leading-relaxed">
+          <Reveal>
+            <p className="text-xl text-veil/90">
+              AI governance is becoming the defining security problem of this decade —
+              not because intelligent systems are dangerous by nature, but because
+              they are being deployed faster than the structures meant to govern them.
+            </p>
+          </Reveal>
 
-          <p>
-            Not because AI is inherently dangerous —
-            but because intelligent systems are being deployed faster than the structures needed to govern them.
-          </p>
+          <Reveal delay={0.05}>
+            <p className="text-saturn">Three failures recur, almost without exception:</p>
+          </Reveal>
 
-          <p>The problems are real and recurring:</p>
+          {/* Numbered as clauses rather than bullets — this is a position, not a list. */}
+          <ol className="space-y-5 my-10">
+            {failures.map((failure, i) => (
+              <Reveal key={failure} delay={0.1 + i * 0.07}>
+                <li className="flex gap-5 items-baseline">
+                  <span className="font-mono text-xs text-varuna/70 shrink-0 pt-1">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-veil/85">{failure}</span>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
 
-          <ul className="list-disc list-inside space-y-2 text-institutional-white/80">
-            <li>Accountability for model behavior remains undefined in most organizations</li>
-            <li>Risk postures rarely account for adversarial AI scenarios</li>
-            <li>Regulatory scrutiny is arriving before teams know what readiness looks like</li>
-          </ul>
+          <Reveal>
+            <p>
+              My work closes that gap. Not through tooling or frameworks alone, but
+              by helping practitioners reason clearly about how AI systems should be
+              secured, governed, and evaluated in practice.
+            </p>
+          </Reveal>
 
-          <p>
-            My work focuses on closing this gap — not through tooling or frameworks alone,
-            but by helping practitioners reason clearly about how AI systems should be
-            secured, governed, and evaluated in practice.
-          </p>
-
-          <p className="text-institutional-white/60 italic">
-            The goal is not theoretical governance.
-            It is defensible decision-making under real-world constraints.
-          </p>
+          <Reveal delay={0.05}>
+            <div className="pt-6">
+              <hr className="oath-rule mb-8" />
+              <p className="text-xl text-dharma font-light leading-relaxed">
+                The goal is not theoretical governance. It is defensible
+                decision-making under real constraints.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

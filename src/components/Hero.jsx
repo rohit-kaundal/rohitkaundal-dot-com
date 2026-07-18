@@ -1,55 +1,72 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
+import { PORTRAIT } from '../data/site'
 
 const Hero = () => {
+  const reduce = useReducedMotion()
+
   return (
     <section id="home" className="min-h-screen flex items-center px-6 py-24">
       <motion.div
-        className="max-w-6xl mx-auto w-full grid gap-12 lg:gap-20 md:grid-cols-[minmax(0,400px)_1fr] items-center"
-        initial={{ opacity: 0, y: 20 }}
+        className="max-w-6xl mx-auto w-full grid gap-12 lg:gap-20 md:grid-cols-[minmax(0,360px)_1fr] items-center"
+        initial={reduce ? false : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7, ease: [0.21, 0.6, 0.35, 1] }}
       >
-        <img
-          src="https://pub-60aaac775e4b4f4f81808c3434b5d92c.r2.dev/WhatsApp%20Image%202026-04-09%20at%2019.52.14.jpeg"
-          alt="Rohit Kaundal"
-          className="w-full max-w-[300px] md:max-w-none border border-institutional-border grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-          loading="eager"
-        />
+        {/* Portrait sits behind a veil until attended to — the reveal is
+            deliberate rather than decorative. */}
+        <div className="relative group w-full max-w-[300px] md:max-w-none">
+          <div
+            className="absolute -inset-px border border-varuna/25 pointer-events-none transition-colors duration-700 group-hover:border-varuna/50"
+            aria-hidden="true"
+          />
+          <img
+            src={PORTRAIT}
+            alt="Rohit Kaundal"
+            className="w-full grayscale contrast-[1.05] opacity-75 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100"
+            loading="eager"
+          />
+        </div>
 
         <div>
-          <h1 className="text-5xl md:text-6xl mb-8 font-light">
+          <div className="doctrine-label mb-8">
+            <span className="veil-ring" aria-hidden="true" />
+            <span>AI Governance &amp; Cyber Defense</span>
+          </div>
+
+          <h1 className="text-5xl md:text-6xl mb-8 font-light text-veil">
             Rohit Kaundal
           </h1>
 
-          <p className="text-2xl mb-6 text-institutional-accent font-light">
-            Designing Secure & Governable AI Systems
+          <p className="text-2xl mb-10 text-varuna font-light leading-snug">
+            Designing secure and governable AI systems.
           </p>
 
-          <p className="text-xl mb-12 text-institutional-white/80 leading-relaxed">
-            The question is no longer whether AI systems will be attacked —
-            but whether they were designed to be defensible, auditable, and accountable in the first place.
+          <p className="text-xl mb-8 text-veil/85 leading-relaxed">
+            The question is no longer whether AI systems will be attacked. It is
+            whether they were built to be defensible, auditable, and accountable
+            before anyone thought to ask.
           </p>
 
-          <p className="text-lg text-institutional-white/70 leading-relaxed mb-12">
-            I work at the intersection of artificial intelligence, cyber risk, and governance —
-            exploring what it means to deploy intelligent systems responsibly when regulation,
-            adversaries, and technology evolve at different speeds.
+          <p className="text-lg text-saturn leading-relaxed mb-12">
+            I work where artificial intelligence, cyber risk, and governance meet —
+            on what it takes to deploy intelligent systems responsibly when
+            regulation, adversaries, and technology each move at a different speed.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
             <a
-              href="#work"
-              className="inline-block px-8 py-3 border border-institutional-accent text-institutional-accent hover:bg-institutional-accent hover:text-institutional-charcoal transition-colors duration-200 text-center"
+              href="#perspective"
+              className="inline-block px-8 py-3 border border-varuna/60 text-varuna hover:bg-varuna hover:text-rahu-void hover:border-varuna transition-colors duration-200 text-center"
             >
-              View work
+              Read the perspective
             </a>
 
             <a
-              href="#perspective"
-              className="inline-block px-8 py-3 text-institutional-white/70 hover:text-institutional-accent transition-colors duration-200 text-center"
+              href="#work"
+              className="inline-block text-saturn hover:text-varuna transition-colors duration-200 text-center"
             >
-              Read perspective
+              Selected work
             </a>
           </div>
         </div>
