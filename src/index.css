@@ -15,8 +15,8 @@ html, body {
 }
 
 body {
-  background: #0B0B0E;
-  color: #EDEDED;
+  background: #05070C;
+  color: #E7EBF2;
   font-family: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
   font-size: 18px;
   line-height: 1.8;
@@ -25,7 +25,10 @@ body {
   position: relative;
 }
 
-/* Ambient backdrop so the glass plates have something to refract */
+/*
+ * Ambient backdrop — Varuna's waters under the eclipse. Aquamarine dominates,
+ * smoke violet sits opposite it, dharma gold appears once and faintly.
+ */
 body::before {
   content: '';
   position: fixed;
@@ -33,10 +36,10 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 55% 45% at 18% 22%, rgba(194, 164, 122, 0.10), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 82% 30%, rgba(107, 122, 153, 0.10), transparent 60%),
-    radial-gradient(ellipse 60% 45% at 30% 78%, rgba(194, 164, 122, 0.07), transparent 65%),
-    radial-gradient(ellipse 45% 35% at 78% 85%, rgba(212, 185, 142, 0.08), transparent 60%);
+    radial-gradient(ellipse 55% 45% at 16% 20%, rgba(63, 197, 201, 0.10), transparent 62%),
+    radial-gradient(ellipse 50% 40% at 84% 28%, rgba(122, 110, 146, 0.11), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 30% 80%, rgba(27, 127, 134, 0.09), transparent 65%),
+    radial-gradient(ellipse 45% 35% at 80% 86%, rgba(201, 167, 106, 0.05), transparent 60%);
 }
 
 /* Make sure section content sits above the ambient backdrop */
@@ -46,7 +49,7 @@ main, nav {
 }
 
 ::selection {
-  background: rgba(194, 164, 122, 0.25);
+  background: rgba(63, 197, 201, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -54,16 +57,16 @@ main, nav {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1E1E26;
+  background: #111726;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C2A47A;
+  background: #1B7F86;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4B98E;
+  background: #3FC5C9;
 }
 
 /* Editorial content container */
@@ -73,26 +76,63 @@ main, nav {
   margin-right: auto;
 }
 
+/*
+ * Shatabhisha's symbol is an empty circle — a veil. Used once per section as
+ * the marker beside the section number, never as filled decoration.
+ */
+.veil-ring {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid rgba(63, 197, 201, 0.55);
+  border-radius: 9999px;
+  vertical-align: middle;
+}
+
+/* Section eyebrow: number, ring, name — the doctrine register */
+.doctrine-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(132, 148, 176, 0.85);
+}
+
+/* Hairline rule that fades like water rather than stopping hard */
+.oath-rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(63, 197, 201, 0.35),
+    rgba(27, 39, 51, 0.9) 45%,
+    transparent
+  );
+}
+
 /* Minimal card */
 .minimal-card {
-  background: rgba(30, 30, 38, 0.3);
-  border: 1px solid rgba(194, 164, 122, 0.15);
+  background: rgba(17, 23, 38, 0.4);
+  border: 1px solid rgba(63, 197, 201, 0.14);
   border-radius: 4px;
 }
 
 /* Frosted glass plate — content reads as if etched into glass */
 .glass-plate {
   position: relative;
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(231, 235, 242, 0.03);
   backdrop-filter: blur(28px) saturate(140%);
   -webkit-backdrop-filter: blur(28px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(132, 148, 176, 0.12);
   border-radius: 6px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.10),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.03),
-    0 30px 70px -20px rgba(0, 0, 0, 0.55),
-    0 10px 30px -10px rgba(0, 0, 0, 0.35);
+    inset 0 1px 0 rgba(231, 235, 242, 0.09),
+    inset 0 -1px 0 rgba(231, 235, 242, 0.03),
+    0 30px 70px -20px rgba(0, 0, 0, 0.6),
+    0 10px 30px -10px rgba(0, 0, 0, 0.4);
   padding: 3rem;
 }
 
@@ -105,11 +145,11 @@ main, nav {
   pointer-events: none;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.02) 28%,
+    rgba(63, 197, 201, 0.07) 0%,
+    rgba(231, 235, 242, 0.02) 28%,
     transparent 55%,
-    rgba(255, 255, 255, 0.015) 78%,
-    rgba(255, 255, 255, 0.05) 100%
+    rgba(122, 110, 146, 0.02) 78%,
+    rgba(231, 235, 242, 0.045) 100%
   );
   mix-blend-mode: screen;
 }
@@ -169,13 +209,13 @@ h3 {
 
 /* Links */
 a {
-  color: #C2A47A;
+  color: #3FC5C9;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #D4B98E;
+  color: #6FE0E0;
 }
 
 /* Section spacing */

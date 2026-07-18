@@ -1,125 +1,145 @@
 import React from 'react'
+import Reveal from './Reveal'
+import SectionHeading from './SectionHeading'
+
+const questions = [
+  'How does an organisation demonstrate AI accountability before compliance standards mature?',
+  'What does "defensible AI" mean beyond penetration testing?',
+  'How should responsibility be defined when intelligent systems fail?',
+  'How does governance keep pace when AI evolves faster than oversight?',
+]
+
+const practice = [
+  {
+    title: 'Governance Design',
+    body: 'Working with technical leaders to design AI risk postures, accountability structures, and governance suited to real constraints.',
+  },
+  {
+    title: 'Security Reasoning for AI Systems',
+    body: 'Threat models covering adversarial manipulation, data poisoning, and inference risk — research translated into practical security thinking.',
+  },
+  {
+    title: 'Regulatory Translation',
+    body: 'Converting emerging AI regulation into governance requirements that hold operationally, not just on paper.',
+  },
+  {
+    title: 'Readiness Assessments',
+    body: 'Evaluating whether governance, documentation, and controls survive scrutiny — regulatory, investor, or adversarial.',
+  },
+  {
+    title: 'Platform-Supported Governance',
+    body: 'For practitioners who need governance operationalised consistently, AIFortess codifies policy, generates evidence, and maintains audit trails.',
+  },
+]
+
+// Pull-quote in the doctrine register — dharma gold, used sparingly.
+const Doctrine = ({ children }) => (
+  <Reveal>
+    <div className="my-12">
+      <hr className="oath-rule mb-8" />
+      <p className="text-xl lg:text-2xl font-light text-dharma leading-relaxed">
+        {children}
+      </p>
+    </div>
+  </Reveal>
+)
 
 const About = () => {
   return (
     <section id="about" className="py-32 px-6">
       <div className="prose">
-        <div className="mb-12">
-          <div className="text-xs font-mono tracking-[0.2em] text-institutional-accent/70 mb-3">03</div>
-          <h2 className="text-4xl font-light">About</h2>
-        </div>
+        <SectionHeading number="03" title="About" />
 
-        <div className="space-y-6 text-body leading-relaxed">
-          <p>
-            I believe the hardest part of AI security is not the technology —
-            it is the absence of clear governance under pressure.
-          </p>
+        <div className="space-y-7 text-body leading-relaxed">
+          <Reveal>
+            <p className="text-xl text-veil/90">
+              The hardest part of AI security is not the technology. It is the
+              absence of clear governance under pressure.
+            </p>
+          </Reveal>
 
-          <p>
-            I began my career in digital forensics, cybercrime investigation, and
-            infrastructure security. That work taught me how systems fail, how
-            adversaries exploit ambiguity, and how governance collapses when
-            accountability is unclear.
-          </p>
+          <Reveal delay={0.05}>
+            <p className="text-saturn">
+              I began in digital forensics, cybercrime investigation, and
+              infrastructure security. That work taught me how systems fail, how
+              adversaries exploit ambiguity, and how governance collapses the
+              moment accountability goes undefined.
+            </p>
+          </Reveal>
 
-          <p>
-            Over time, my focus shifted toward translating that operational reality
-            into practical frameworks — structures that help teams reason about AI
-            risk before incidents, audits, or regulations force the conversation.
-          </p>
+          <Reveal delay={0.05}>
+            <p className="text-saturn">
+              My focus shifted toward turning that operational reality into
+              structures teams can reason with — before incidents, audits, or
+              regulators force the conversation. That led to AIFortess, a platform
+              built to codify governance into usable systems.
+            </p>
+          </Reveal>
 
-          <p>
-            This perspective led to AIFortess — a platform I'm building to codify
-            governance concepts into usable systems. The platform exists to support
-            governance, not replace it.
-          </p>
+          <Doctrine>
+            Tools operationalise decisions. They do not make them.
+          </Doctrine>
 
-          <p className="text-institutional-white/60 italic">
-            Tools operationalize decisions.
-            They do not make them.
-          </p>
+          <Reveal>
+            <h3 className="text-2xl mb-8 text-veil font-light">
+              The Questions I&apos;m Working On
+            </h3>
+          </Reveal>
 
-          <hr className="border-institutional-border my-12" />
+          <ol className="space-y-5">
+            {questions.map((q, i) => (
+              <Reveal key={q} delay={i * 0.06}>
+                <li className="flex gap-5 items-baseline">
+                  <span className="font-mono text-xs text-varuna/70 shrink-0 pt-1">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-veil/85">{q}</span>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
 
-          <h3 className="text-2xl mb-6">The Questions I'm Working On</h3>
+          <Doctrine>
+            This work is systems-oriented, not transactional. It prioritises
+            clarity, structure, and long-term defensibility.
+          </Doctrine>
 
-          <ul className="space-y-2 list-disc list-inside">
-            <li>How can an organization demonstrate AI accountability before compliance standards fully mature?</li>
-            <li>What does "defensible AI" mean beyond penetration testing?</li>
-            <li>How should responsibility be defined when intelligent systems fail?</li>
-            <li>How can governance keep pace when AI systems evolve faster than oversight?</li>
-          </ul>
+          <Reveal>
+            <h3 className="text-2xl mb-6 text-veil font-light">Background</h3>
+          </Reveal>
 
-          <p className="text-institutional-white/60 italic mt-8">
-            This work is systems-oriented, not transactional.
-            It prioritizes clarity, structure, and long-term defensibility.
-          </p>
+          <Reveal delay={0.05}>
+            <p className="text-saturn">
+              Over a decade of operational security experience — forensics,
+              infrastructure security, and regulated environments. I hold
+              certifications in information security management, network security,
+              penetration testing, and data protection. They inform the work. They
+              are not its foundation.
+            </p>
+          </Reveal>
 
-          <hr className="border-institutional-border my-12" />
+          <Doctrine>
+            Governance frameworks endure because they reflect reality, not
+            credentials.
+          </Doctrine>
 
-          <h3 className="text-2xl mb-6">Background</h3>
+          <Reveal>
+            <h3 className="text-2xl mb-8 text-veil font-light">How I Work</h3>
+          </Reveal>
 
-          <p>
-            My work is grounded in over a decade of operational security experience —
-            forensics, infrastructure security, and regulated environments.
-          </p>
-
-          <p>
-            I hold certifications in information security management, network security,
-            penetration testing, and data protection. These inform my thinking — but
-            they are not the foundation of it.
-          </p>
-
-          <p className="text-institutional-white/60 italic">
-            Governance frameworks endure because they reflect reality, not credentials.
-          </p>
-
-          <hr className="border-institutional-border my-12" />
-
-          <h3 className="text-2xl mb-6">How I Work</h3>
-
-          <div className="space-y-8">
-            <div>
-              <h4 className="text-lg font-medium mb-2">Governance Design</h4>
-              <p className="text-institutional-white/70">
-                Working with technical leaders to design AI risk postures, accountability
-                structures, and governance approaches suited to real-world constraints.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-medium mb-2">Security Reasoning for AI Systems</h4>
-              <p className="text-institutional-white/70">
-                Developing threat models for AI systems — including adversarial manipulation,
-                data poisoning, and inference risks — and translating research into practical
-                security thinking.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-medium mb-2">Regulatory Translation</h4>
-              <p className="text-institutional-white/70">
-                Helping teams interpret emerging AI regulations and convert them into
-                governance requirements that make sense operationally, not just on paper.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-medium mb-2">Readiness Assessments</h4>
-              <p className="text-institutional-white/70">
-                Evaluating whether governance, documentation, and controls can withstand
-                scrutiny — regulatory, investor, or adversarial.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-medium mb-2">Platform-Supported Governance</h4>
-              <p className="text-institutional-white/70">
-                For practitioners who need governance operationalized consistently, AIFortess
-                provides infrastructure to codify policies, generate evidence, and maintain
-                audit trails for AI systems.
-              </p>
-            </div>
+          <div className="space-y-10">
+            {practice.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.05}>
+                <div className="border-l border-varuna/30 pl-6">
+                  <h4 className="text-lg font-medium mb-2 text-veil">
+                    {item.title}
+                  </h4>
+                  <p className="text-saturn text-base leading-relaxed">
+                    {item.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </div>
