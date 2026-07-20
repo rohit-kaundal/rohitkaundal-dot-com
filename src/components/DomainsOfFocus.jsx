@@ -4,24 +4,24 @@ import SectionHeading from './SectionHeading'
 
 const domains = [
   {
-    title: 'AI Governance & Model Security',
+    title: 'Continuous Governance',
     description:
-      'The controls, documentation practices, and accountability structures that make AI systems auditable and defensible — adversarial robustness, model provenance, training data integrity, and post-deployment risk.',
+      'Point-in-time compliance proves you were secure on one day last year. Continuous governance proves it today. Controls that run on a schedule, generate their own evidence, and fail loudly when they drift.',
   },
   {
-    title: 'Cyber Risk & Decision Support',
+    title: 'Security Engineering',
     description:
-      'Translating technical vulnerabilities into language that supports governance decisions, so technical leaders and operators can see exposure, responsibility, and control boundaries clearly.',
+      'Policy as code, not policy as PDF. A control that lives in a document depends on someone remembering it. A control that lives in the pipeline enforces itself whether anyone is watching or not.',
   },
   {
-    title: 'Regulatory Interpretation',
+    title: 'AI Governance',
     description:
-      'Preparing teams for emerging AI-specific regulation by building documentation, audit trails, and governance practice ahead of enforcement timelines rather than behind them.',
+      'Model provenance, data lineage, evaluation records, and clear accountability for system behaviour. Enterprise buyers are starting to ask how your AI makes decisions. That answer has to exist before they ask.',
   },
   {
-    title: 'Secure Intelligence Infrastructure',
+    title: 'Enterprise Trust',
     description:
-      'Cloud and data environments built for AI workloads that hold up under confidentiality, integrity, supply chain, and cross-border data pressure.',
+      'Trust is not a feeling. It is evidence a buyer can verify without taking your word for it. The goal is a security review that shortens the sales cycle instead of stalling it.',
   },
 ]
 
@@ -29,7 +29,7 @@ const DomainsOfFocus = () => {
   return (
     <section id="domains" className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
-        <SectionHeading number="02" title="Domains of Focus" align="center" />
+        <SectionHeading number="02" title="Four Layers of the System" align="center" />
 
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-14">
           {domains.map((domain, i) => (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { PORTRAIT } from '../data/site'
+import { PORTRAIT, ASSESSMENT_URL } from '../data/site'
 
 const Hero = () => {
   const reduce = useReducedMotion()
@@ -31,7 +31,7 @@ const Hero = () => {
         <div>
           <div className="doctrine-label mb-8">
             <span className="veil-ring" aria-hidden="true" />
-            <span>AI Governance &amp; Cyber Defense</span>
+            <span>The Cyber Operating System</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl mb-8 font-light text-veil">
@@ -39,34 +39,36 @@ const Hero = () => {
           </h1>
 
           <p className="text-2xl mb-10 text-varuna font-light leading-snug">
-            Designing secure and governable AI systems.
+            Security stopped being a project. It became an operating system.
           </p>
 
           <p className="text-xl mb-8 text-veil/85 leading-relaxed">
-            The question is no longer whether AI systems will be attacked. It is
-            whether they were built to be defensible, auditable, and accountable
-            before anyone thought to ask.
+            AI companies rarely lose enterprise deals on product. They lose them
+            in the security review — six weeks after the demo, in a questionnaire
+            nobody owns.
           </p>
 
           <p className="text-lg text-saturn leading-relaxed mb-12">
-            I work where artificial intelligence, cyber risk, and governance meet —
-            on what it takes to deploy intelligent systems responsibly when
-            regulation, adversaries, and technology each move at a different speed.
+            Compliance was designed for an annual audit. Enterprise buyers now ask
+            questions only continuous governance can answer. I build the system
+            that answers them — engineered, automated, and running every day.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
             <a
-              href="#perspective"
+              href={ASSESSMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-3 border border-varuna/60 text-varuna hover:bg-varuna hover:text-rahu-void hover:border-varuna transition-colors duration-200 text-center"
             >
-              Read the perspective
+              Take the free Readiness Assessment
             </a>
 
             <a
-              href="#work"
+              href="#perspective"
               className="inline-block text-saturn hover:text-varuna transition-colors duration-200 text-center"
             >
-              Selected work
+              Read the thinking
             </a>
           </div>
         </div>

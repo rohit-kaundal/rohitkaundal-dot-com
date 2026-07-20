@@ -2,6 +2,10 @@
 
 export const AIFORTESS_URL = 'https://aifortess.com'
 
+export const ASSESSMENT_URL = 'https://aifortess.com/governance-assessment'
+
+export const NEWSLETTER_URL = 'https://aifortess.kit.com/'
+
 export const EMAIL = 'rohit@aifortess.com'
 
 export const SOCIAL = {
