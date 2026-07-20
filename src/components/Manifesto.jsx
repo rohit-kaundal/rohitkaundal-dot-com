@@ -3,9 +3,9 @@ import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
 const failures = [
-  'Accountability for model behaviour remains undefined in most organisations.',
-  'Risk postures rarely account for adversarial AI scenarios.',
-  'Regulatory scrutiny arrives before teams know what readiness looks like.',
+  'Compliance is treated as an annual event. Enterprise risk is continuous.',
+  'Security lives in documents instead of code. Documents enforce nothing.',
+  'Governance belongs to no one — until a deal stalls, and it belongs to the founder.',
 ]
 
 const Manifesto = () => {
@@ -17,14 +17,18 @@ const Manifesto = () => {
         <div className="space-y-7 text-body leading-relaxed">
           <Reveal>
             <p className="text-xl text-veil/90">
-              AI governance is becoming the defining security problem of this decade —
-              not because intelligent systems are dangerous by nature, but because
-              they are being deployed faster than the structures meant to govern them.
+              Something changed in the last two years. Enterprise buyers stopped
+              asking AI companies for a certificate and started asking how the
+              system actually works. Most teams have an answer for the first
+              question and nothing for the second.
             </p>
           </Reveal>
 
           <Reveal delay={0.05}>
-            <p className="text-saturn">Three failures recur, almost without exception:</p>
+            <p className="text-saturn">
+              I have watched the same three failures repeat, almost without
+              exception:
+            </p>
           </Reveal>
 
           {/* Numbered as clauses rather than bullets — this is a position, not a list. */}
@@ -43,9 +47,18 @@ const Manifesto = () => {
 
           <Reveal>
             <p>
-              My work closes that gap. Not through tooling or frameworks alone, but
-              by helping practitioners reason clearly about how AI systems should be
-              secured, governed, and evaluated in practice.
+              None of these are compliance problems. They are engineering
+              problems wearing a compliance costume. So I stopped treating
+              security as a document to produce and started treating it as a
+              system to run — policy expressed as code, evidence generated
+              automatically, controls that report their own state.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <p className="text-saturn">
+              That system is what I call a Cyber Operating System. Not a
+              framework you adopt. Infrastructure you operate.
             </p>
           </Reveal>
 
@@ -53,8 +66,8 @@ const Manifesto = () => {
             <div className="pt-6">
               <hr className="oath-rule mb-8" />
               <p className="text-xl text-dharma font-light leading-relaxed">
-                The goal is not theoretical governance. It is defensible
-                decision-making under real constraints.
+                A checklist tells you what you had. An operating system tells you
+                what you have.
               </p>
             </div>
           </Reveal>

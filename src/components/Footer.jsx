@@ -6,6 +6,8 @@ import {
   PGP_FINGERPRINT,
   PGP_URL,
   LOCATION,
+  NEWSLETTER_URL,
+  ASSESSMENT_URL,
 } from '../data/site'
 
 const links = [
@@ -24,16 +26,34 @@ const Footer = () => {
           <div>
             <div className="text-lg font-light text-veil">Rohit Kaundal</div>
             <p className="mt-4 max-w-md text-saturn leading-relaxed">
-              AI governance and cyber defence. Founder of AIFortess, where
-              governance is codified into systems practitioners can actually
-              operate.
+              Building the Cyber Operating System — continuous governance,
+              security engineering, and automation that make AI companies
+              enterprise-ready. Founder of AIFortess.
             </p>
-            <a
-              href={`mailto:${EMAIL}`}
-              className="mt-6 inline-block text-varuna hover:text-varuna-bright transition-colors"
-            >
-              {EMAIL}
-            </a>
+            <div className="mt-6 flex flex-col gap-2 items-start">
+              <a
+                href={ASSESSMENT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-varuna hover:text-varuna-bright transition-colors"
+              >
+                Free Readiness Assessment
+              </a>
+              <a
+                href={NEWSLETTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-varuna hover:text-varuna-bright transition-colors"
+              >
+                Newsletter — The Cyber Operating System
+              </a>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="text-varuna hover:text-varuna-bright transition-colors"
+              >
+                {EMAIL}
+              </a>
+            </div>
           </div>
 
           <div className="lg:justify-self-end">

@@ -3,32 +3,32 @@ import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
 const questions = [
-  'How does an organisation demonstrate AI accountability before compliance standards mature?',
-  'What does "defensible AI" mean beyond penetration testing?',
-  'How should responsibility be defined when intelligent systems fail?',
-  'How does governance keep pace when AI evolves faster than oversight?',
+  'What does an AI company need to prove before an enterprise buyer will trust it?',
+  'Which security controls can be automated, and which genuinely require judgment?',
+  'How do you keep governance current when the product ships every week?',
+  'Who is accountable when an autonomous system makes a decision nobody reviewed?',
 ]
 
 const practice = [
   {
-    title: 'Governance Design',
-    body: 'Working with technical leaders to design AI risk postures, accountability structures, and governance suited to real constraints.',
+    title: 'Cyber Operating System Build',
+    body: 'The full system, installed. Policy as code, automated evidence, continuous control monitoring, and clear ownership. You stop rebuilding your security posture for every deal because it is always current.',
   },
   {
-    title: 'Security Reasoning for AI Systems',
-    body: 'Threat models covering adversarial manipulation, data poisoning, and inference risk — research translated into practical security thinking.',
+    title: 'Enterprise Readiness Assessment',
+    body: 'A direct answer to one question: what is standing between you and closing enterprise contracts? Compass scores your readiness in three minutes for free. This is the deep version — your architecture, your buyers, your actual blockers, ranked by what costs you revenue rather than by control number.',
   },
   {
-    title: 'Regulatory Translation',
-    body: 'Converting emerging AI regulation into governance requirements that hold operationally, not just on paper.',
+    title: 'Fractional Security Leadership',
+    body: 'For teams that need security judgment in the room but not a full-time hire. I sit with your engineering leadership, own the security narrative for buyers, and build the system as we go.',
   },
   {
-    title: 'Readiness Assessments',
-    body: 'Evaluating whether governance, documentation, and controls survive scrutiny — regulatory, investor, or adversarial.',
+    title: 'Strategic Advisory',
+    body: 'For founders, CTOs, and investors making decisions where security and governance change the outcome — architecture bets, diligence, or a first enterprise contract that will define the next five.',
   },
   {
-    title: 'Platform-Supported Governance',
-    body: 'For practitioners who need governance operationalised consistently, AIFortess codifies policy, generates evidence, and maintains audit trails.',
+    title: 'Speaking',
+    body: 'On cyber operating systems, AI governance, and why enterprise trust is now an engineering discipline. Founder-to-founder, not a vendor pitch.',
   },
 ]
 
@@ -53,31 +53,34 @@ const About = () => {
         <div className="space-y-7 text-body leading-relaxed">
           <Reveal>
             <p className="text-xl text-veil/90">
-              The hardest part of AI security is not the technology. It is the
-              absence of clear governance under pressure.
+              I think about security the way engineers think about reliability.
+              Nobody writes a document promising the system will stay up. They
+              build something that keeps it up, and they measure it.
             </p>
           </Reveal>
 
           <Reveal delay={0.05}>
             <p className="text-saturn">
-              I began in digital forensics, cybercrime investigation, and
-              infrastructure security. That work taught me how systems fail, how
-              adversaries exploit ambiguity, and how governance collapses the
-              moment accountability goes undefined.
+              Security is still stuck one step behind that. It produces artifacts
+              instead of systems. A policy nobody reads. A questionnaire answered
+              from memory. An audit that describes a company which no longer
+              exists by the time the report is printed.
             </p>
           </Reveal>
 
           <Reveal delay={0.05}>
             <p className="text-saturn">
-              My focus shifted toward turning that operational reality into
-              structures teams can reason with — before incidents, audits, or
-              regulators force the conversation. That led to AIFortess, a platform
-              built to codify governance into usable systems.
+              I spent years watching what happens when systems fail — forensics,
+              incidents, the aftermath. The pattern was never a missing control.
+              It was a control that existed on paper and nowhere else. So I built
+              AIFortess to close that distance: governance that runs as software,
+              not governance that is described in a folder.
             </p>
           </Reveal>
 
           <Doctrine>
-            Tools operationalise decisions. They do not make them.
+            If a control cannot report its own state, it is not a control. It is
+            a hope.
           </Doctrine>
 
           <Reveal>
@@ -100,31 +103,42 @@ const About = () => {
           </ol>
 
           <Doctrine>
-            This work is systems-oriented, not transactional. It prioritises
-            clarity, structure, and long-term defensibility.
+            Most companies buy compliance and hope it produces trust. It works in
+            the opposite direction.
           </Doctrine>
 
           <Reveal>
-            <h3 className="text-2xl mb-6 text-veil font-light">Background</h3>
+            <h3 className="text-2xl mb-6 text-veil font-light">
+              How I Work
+            </h3>
           </Reveal>
 
           <Reveal delay={0.05}>
             <p className="text-saturn">
-              Over a decade of operational security experience — forensics,
-              infrastructure security, and regulated environments. I hold
-              certifications in information security management, network security,
-              penetration testing, and data protection. They inform the work. They
-              are not its foundation.
+              I build systems, not decks. Every engagement ends with something
+              running in your environment that keeps working after I leave — and
+              a team that understands why each piece is there.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <p className="text-saturn">
+              I work founder-to-founder. I have shipped product, sold to
+              enterprises, and sat on the wrong side of a security review. I will
+              tell you when a control is theatre, and I will tell you when the
+              boring answer is the correct one.
             </p>
           </Reveal>
 
           <Doctrine>
-            Governance frameworks endure because they reflect reality, not
-            credentials.
+            Certifications describe what someone studied. Systems describe what
+            someone built.
           </Doctrine>
 
           <Reveal>
-            <h3 className="text-2xl mb-8 text-veil font-light">How I Work</h3>
+            <h3 className="text-2xl mb-8 text-veil font-light">
+              Ways We Can Work Together
+            </h3>
           </Reveal>
 
           <div className="space-y-10">
