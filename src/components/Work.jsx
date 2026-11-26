@@ -1,42 +1,74 @@
 import React from 'react'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
-import { AIFORTESS_URL, SOCIAL } from '../data/site'
+import { AIFORTESS_URL, AIFORTESS_AGENTS_URL, ASSESSMENT_URL, SOCIAL } from '../data/site'
+
+const credentials = [
+  { value: '15 years', label: 'Pentesting, forensics, DevSecOps and SOC' },
+  { value: 'CSA', label: 'AI Trustworthy Pledge signatory' },
+  { value: 'Hub71', label: 'Perks & Services partner' },
+  { value: 'Dubai', label: 'Built here, serving the GCC' },
+]
 
 const projects = [
   {
-    title: 'AIFortess — The Cyber Operating System, as Software',
+    title: 'AIFortess: AI agents that do cybersecurity work',
     description:
-      'Everything I argue for on this page, built into a product. AIFortess turns governance into something a team runs rather than something a consultant delivers. Policy becomes code. Evidence generates itself. Readiness becomes a number you can check on a Tuesday.',
+      'The architecture I recommend, built into a company. AIFortess builds AI agents that take the endless, copy-paste work off security teams: alert triage, scanner exports, audit evidence and questionnaires. Every agent runs with least-privilege access, read-only by default, and a person approves anything consequential.',
     products: [
       {
-        name: 'AIFortess Assessor',
+        name: 'Exposure & Threat Intel Agent',
         summary:
-          'ISO 42001 readiness for AI teams and independent advisors. Map your AI systems, assess risks and controls, see the gaps, export the evidence. No spreadsheets. No enterprise bloat.',
+          'Watches everything about your company that is visible from the internet and reports each week what changed and what matters: exposed services, newly exploited CVEs, leaked credentials and lookalike domains.',
       },
       {
-        name: 'AIFortess Compass',
+        name: 'Vulnerability Prioritization Agent',
         summary:
-          'A free 3-minute Agentic AI Readiness Scorecard. 17 questions across deployment inventory, governance controls, and regulatory readiness — scored out of 100, with the one thing to fix next. Built on the OWASP State of Agentic AI Security and Governance 2.01.',
+          'Turns thousands of scanner findings into a short fix list ranked by known exploitation (KEV, EPSS), exposure and asset value, with Jira or GitHub tickets drafted for approval.',
+      },
+      {
+        name: 'Compliance Evidence Agent',
+        summary:
+          'Maps ISO 27001, ISO 42001, SOC 2 or UAE IAS controls to your systems, collects timestamped evidence on a schedule, flags drift and drafts questionnaire answers that cite their sources.',
+      },
+      {
+        name: 'AI Agent Security Agent',
+        summary:
+          'Finds the AI agents and MCP servers running in your company, maps what each can reach against OWASP Agentic AI guidance, and tests whether it can be talked into misusing that access.',
+      },
+      {
+        name: 'SOC Investigation Agent',
+        summary:
+          'Investigates SIEM and EDR alerts the way a Tier-1 analyst would, and writes a verdict with evidence and a recommended next step. It never contains anything without approval. Currently being built with design partners.',
       },
     ],
-    link: AIFORTESS_URL,
-    linkLabel: 'Visit aifortess.com',
+    note: 'Companies start with a fixed-fee, 14-day pilot on one workflow. The success metric is agreed in writing on Day 1. If the agent does not hit it, AIFortess keeps working at no charge, and refunds the fee if it still cannot.',
+    link: AIFORTESS_AGENTS_URL,
+    linkLabel: 'See the agents',
+    secondaryLink: AIFORTESS_URL,
+    secondaryLabel: 'Visit aifortess.com',
   },
   {
-    title: 'Enterprise Readiness for AI Companies',
+    title: 'AIFortess Compass and Assessor',
     description:
-      'Seed to Series B teams whose enterprise pipeline was blocked by security review. The work is the same each time: find what the buyer actually needs proven, build the system that proves it continuously, and hand the team something they can operate without me.',
+      'Compass is a free Agentic AI Readiness Scorecard: seventeen questions on deployment inventory, governance controls and regulatory readiness, built on the OWASP State of Agentic AI Security and Governance. Assessor takes ISO 42001 readiness out of spreadsheets for AI teams and independent advisors.',
+    link: ASSESSMENT_URL,
+    linkLabel: 'Get your free score',
   },
   {
-    title: 'Governance That Survives Contact',
+    title: 'Enterprise readiness for AI companies',
     description:
-      'ISO 27001, ISO 42001, SOC 2, GDPR — implemented as running controls rather than binders. The certificate is a by-product. The operating system is the deliverable, and it is still true the day after the audit closes.',
+      'Seed to Series B teams whose enterprise pipeline was blocked by security review. Each time the approach is the same: find out what the buyer actually needs proven, design the architecture that proves it, and hand over a system the team can run without me.',
   },
   {
-    title: 'Open-Source Security Tooling',
+    title: 'Frameworks implemented as running controls',
     description:
-      'k8s-scanner, an agentless Kubernetes security scanner, released free. Automation that only works when you pay for it is not automation. It is a subscription to someone else’s leverage.',
+      'ISO 27001, ISO 42001, SOC 2 and GDPR, implemented as controls that run, not as binders on a shelf. The certificate is a by-product. The architecture is what I deliver, and it is still accurate the day after the audit closes.',
+  },
+  {
+    title: 'Open-source security tooling',
+    description:
+      'k8s-scanner, an agentless Kubernetes security scanner, released for free. Infrastructure security is the foundation every AI workload runs on.',
     link: `${SOCIAL.github}/k8s-scanner`,
     linkLabel: 'View on GitHub',
   },
@@ -44,9 +76,27 @@ const projects = [
 
 const Work = () => {
   return (
-    <section id="work" className="py-32 px-6">
+    <section id="proof" className="py-32 px-6">
       <div className="prose">
-        <SectionHeading number="04" title="What I've Built" />
+        <SectionHeading number="05" title="Proof, Not Promises" />
+
+        <Reveal>
+          <p className="text-body text-saturn mb-14 leading-relaxed">
+            Anyone can call themselves an architect. Judge me by what I have
+            built and released.
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
+            {credentials.map((item) => (
+              <div key={item.value} className="border-t border-rahu-border pt-3">
+                <dt className="text-xl text-veil font-light">{item.value}</dt>
+                <dd className="text-xs text-saturn leading-relaxed mt-1">{item.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
 
         <div className="space-y-16">
           {projects.map((project, i) => (
@@ -75,22 +125,36 @@ const Work = () => {
                   </div>
                 )}
 
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 mt-2 text-varuna hover:text-varuna-bright transition-colors"
-                  >
-                    {project.linkLabel}
-                    <span
-                      className="transition-transform duration-200 group-hover:translate-x-1"
-                      aria-hidden="true"
-                    >
-                      →
-                    </span>
-                  </a>
+                {project.note && (
+                  <p className="text-sm text-dharma/90 leading-relaxed mb-6 border-l border-dharma/40 pl-4">
+                    {project.note}
+                  </p>
                 )}
+
+                <div className="flex flex-wrap gap-x-8 gap-y-2">
+                  {[
+                    [project.link, project.linkLabel],
+                    [project.secondaryLink, project.secondaryLabel],
+                  ]
+                    .filter(([href]) => href)
+                    .map(([href, label]) => (
+                      <a
+                        key={href}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 mt-2 text-varuna hover:text-varuna-bright transition-colors"
+                      >
+                        {label}
+                        <span
+                          className="transition-transform duration-200 group-hover:translate-x-1"
+                          aria-hidden="true"
+                        >
+                          →
+                        </span>
+                      </a>
+                    ))}
+                </div>
               </article>
             </Reveal>
           ))}

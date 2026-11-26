@@ -26,9 +26,10 @@ const Footer = () => {
           <div>
             <div className="text-lg font-light text-veil">Rohit Kaundal</div>
             <p className="mt-4 max-w-md text-saturn leading-relaxed">
-              Building the Cyber Operating System — continuous governance,
-              security engineering, and automation that make AI companies
-              enterprise-ready. Founder of AIFortess.
+              AI Security Architect. I design and build security architecture
+              for AI systems (agents, models and data pipelines) so AI companies
+              can pass enterprise review and stay secure. Founder of AIFortess,
+              which builds AI agents for cybersecurity, from Dubai.
             </p>
             <div className="mt-6 flex flex-col gap-2 items-start">
               <a
@@ -37,7 +38,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-varuna hover:text-varuna-bright transition-colors"
               >
-                Free Readiness Assessment
+                Free AI Security Score
               </a>
               <a
                 href={NEWSLETTER_URL}
