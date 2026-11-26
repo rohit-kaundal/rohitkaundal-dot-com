@@ -2,72 +2,92 @@ import React from 'react'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
-const failures = [
-  'Compliance is treated as an annual event. Enterprise risk is continuous.',
-  'Security lives in documents instead of code. Documents enforce nothing.',
-  'Governance belongs to no one — until a deal stalls, and it belongs to the founder.',
+// The new attack surface: what AI added that the old security programme never modelled.
+const surface = [
+  {
+    name: 'Agents with real permissions',
+    body: 'An agent that can call tools can be talked into calling the wrong one. Prompt injection is no longer a chatbot curiosity. It is remote code execution in plain English.',
+  },
+  {
+    name: 'A model supply chain nobody audits',
+    body: 'Weights from public hubs, datasets of unknown origin, fine-tunes with no lineage. Most teams cannot say where their model came from or what it was trained on.',
+  },
+  {
+    name: 'Data leaking through context',
+    body: 'RAG pipelines and long context windows move customer data into places your access controls never reach. The leak looks like a helpful answer.',
+  },
+  {
+    name: 'Decisions nobody can reconstruct',
+    body: 'When an autonomous system acts and something goes wrong, you need the prompt, the context, the model version and the tool call. Most logs keep none of them.',
+  },
+]
+
+const costs = [
+  'The enterprise deal that stalls in procurement for a quarter.',
+  'The incident your team cannot explain to the customer, or to the board.',
+  'The regulator asking for EU AI Act and ISO 42001 evidence you never produced.',
 ]
 
 const Manifesto = () => {
   return (
-    <section id="perspective" className="py-32 px-6">
+    <section id="problem" className="py-32 px-6">
       <div className="prose">
-        <SectionHeading number="01" title="Perspective" />
+        <SectionHeading number="01" title="The Problem" />
 
         <div className="space-y-7 text-body leading-relaxed">
           <Reveal>
             <p className="text-xl text-veil/90">
-              Something changed in the last two years. Enterprise buyers stopped
-              asking AI companies for a certificate and started asking how the
-              system actually works. Most teams have an answer for the first
-              question and nothing for the second.
+              Every AI feature you ship adds attack surface your security
+              programme was never designed for. Firewalls, SOC 2 and a pen test
+              were built for deterministic software. Your product is not
+              deterministic any more.
             </p>
           </Reveal>
 
           <Reveal delay={0.05}>
             <p className="text-saturn">
-              I have watched the same three failures repeat, almost without
-              exception:
+              There are four new exposures. Most AI companies are covering none
+              of them:
             </p>
           </Reveal>
 
-          {/* Numbered as clauses rather than bullets — this is a position, not a list. */}
-          <ol className="space-y-5 my-10">
-            {failures.map((failure, i) => (
-              <Reveal key={failure} delay={0.1 + i * 0.07}>
-                <li className="flex gap-5 items-baseline">
+          <div className="space-y-8 my-10">
+            {surface.map((item, i) => (
+              <Reveal key={item.name} delay={0.05 + i * 0.06}>
+                <div className="flex gap-5 items-baseline">
                   <span className="font-mono text-xs text-varuna/70 shrink-0 pt-1">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-veil/85">{failure}</span>
-                </li>
+                  <div>
+                    <h3 className="text-lg font-medium text-veil mb-1">{item.name}</h3>
+                    <p className="text-saturn text-base leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
               </Reveal>
             ))}
-          </ol>
+          </div>
 
           <Reveal>
-            <p>
-              None of these are compliance problems. They are engineering
-              problems wearing a compliance costume. So I stopped treating
-              security as a document to produce and started treating it as a
-              system to run — policy expressed as code, evidence generated
-              automatically, controls that report their own state.
+            <p className="text-veil/90">
+              Ignoring it does not make it free. The cost just shows up later, in
+              one of three places:
             </p>
           </Reveal>
 
-          <Reveal delay={0.05}>
-            <p className="text-saturn">
-              That system is what I call a Cyber Operating System. Not a
-              framework you adopt. Infrastructure you operate.
-            </p>
-          </Reveal>
+          <ul className="space-y-3 border-l border-varuna/30 pl-6">
+            {costs.map((cost, i) => (
+              <Reveal key={cost} delay={i * 0.05}>
+                <li className="text-saturn">{cost}</li>
+              </Reveal>
+            ))}
+          </ul>
 
           <Reveal delay={0.05}>
             <div className="pt-6">
               <hr className="oath-rule mb-8" />
               <p className="text-xl text-dharma font-light leading-relaxed">
-                A checklist tells you what you had. An operating system tells you
-                what you have.
+                Security added after launch is the most expensive security you
+                will ever buy. Security designed in costs almost nothing extra.
               </p>
             </div>
           </Reveal>

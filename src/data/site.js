@@ -2,6 +2,10 @@
 
 export const AIFORTESS_URL = 'https://aifortess.com'
 
+export const AIFORTESS_AGENTS_URL = 'https://aifortess.com/agents/'
+
+export const AIFORTESS_PILOT_URL = 'https://aifortess.com/#pricing'
+
 export const ASSESSMENT_URL = 'https://aifortess.com/governance-assessment'
 
 export const NEWSLETTER_URL = 'https://aifortess.kit.com/'

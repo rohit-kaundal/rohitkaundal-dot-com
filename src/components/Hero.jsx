@@ -2,6 +2,15 @@ import React from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { PORTRAIT, ASSESSMENT_URL } from '../data/site'
 
+// Hormozi value equation, made visible: dream outcome and likelihood up,
+// time delay and effort down.
+const valueEquation = [
+  { label: 'Outcome', value: 'The security review closes the deal instead of stalling it' },
+  { label: 'Certainty', value: 'Mapped to OWASP LLM Top 10, MITRE ATLAS, ISO 42001' },
+  { label: 'Speed', value: 'An architecture in weeks, not a programme in quarters' },
+  { label: 'Effort', value: 'Built into your pipeline, not added to your backlog' },
+]
+
 const Hero = () => {
   const reduce = useReducedMotion()
 
@@ -31,7 +40,7 @@ const Hero = () => {
         <div>
           <div className="doctrine-label mb-8">
             <span className="veil-ring" aria-hidden="true" />
-            <span>The Cyber Operating System</span>
+            <span>AI Security Architect</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl mb-8 font-light text-veil">
@@ -39,20 +48,32 @@ const Hero = () => {
           </h1>
 
           <p className="text-2xl mb-10 text-varuna font-light leading-snug">
-            Security stopped being a project. It became an operating system.
+            I architect AI systems that pass the enterprise security review the
+            first time, and stay secure after they ship.
           </p>
 
           <p className="text-xl mb-8 text-veil/85 leading-relaxed">
-            AI companies rarely lose enterprise deals on product. They lose them
-            in the security review — six weeks after the demo, in a questionnaire
-            nobody owns.
+            Your AI product is ready. Your security architecture isn&apos;t.
+            Agents with tool access, models pulled from public hubs, prompts
+            carrying customer data: enterprise buyers now want to know how all
+            of it is controlled.
           </p>
 
-          <p className="text-lg text-saturn leading-relaxed mb-12">
-            Compliance was designed for an annual audit. Enterprise buyers now ask
-            questions only continuous governance can answer. I build the system
-            that answers them — engineered, automated, and running every day.
+          <p className="text-lg text-saturn leading-relaxed mb-10">
+            I design the architecture that answers them, then build it into your
+            pipeline so it keeps running every day.
           </p>
+
+          <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mb-12">
+            {valueEquation.map((item) => (
+              <div key={item.label} className="border-t border-rahu-border pt-3">
+                <dt className="font-mono text-xs uppercase tracking-doctrine text-varuna/80 mb-1">
+                  {item.label}
+                </dt>
+                <dd className="text-sm text-saturn leading-relaxed">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
 
           <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
             <a
@@ -61,16 +82,21 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 border border-varuna/60 text-varuna hover:bg-varuna hover:text-rahu-void hover:border-varuna transition-colors duration-200 text-center"
             >
-              Take the free Readiness Assessment
+              Get your free AI Security Score
             </a>
 
             <a
-              href="#perspective"
+              href="#offer"
               className="inline-block text-saturn hover:text-varuna transition-colors duration-200 text-center"
             >
-              Read the thinking
+              See the Architecture Sprint →
             </a>
           </div>
+
+          <p className="mt-10 text-sm text-saturn-dim leading-relaxed">
+            15 years in pentesting, forensics, DevSecOps and SOC · Founder of
+            AIFortess · CSA AI Trustworthy Pledge signatory
+          </p>
         </div>
       </motion.div>
     </section>

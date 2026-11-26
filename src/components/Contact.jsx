@@ -3,19 +3,49 @@ import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { EMAIL, ASSESSMENT_URL, NEWSLETTER_URL } from '../data/site'
 
+const steps = [
+  {
+    title: 'Get your score',
+    body: 'Take the free AI Security Score. Three minutes, and you see your gaps whether or not we ever speak.',
+  },
+  {
+    title: 'Send one email',
+    body: 'Tell me your stage, your AI stack, and which deal is stuck or at risk. No form, no gatekeeper. It reaches me directly.',
+  },
+  {
+    title: 'Get a straight answer',
+    body: 'I reply with whether a sprint is the right fit, what it would fix first, and what it costs. If it is not the right fit, I will tell you that too.',
+  },
+]
+
 const Contact = () => {
   return (
     <section id="contact" className="py-32 px-6">
       <div className="prose">
-        <SectionHeading number="05" title="Contact" />
+        <SectionHeading number="08" title="Start Here" />
 
         <Reveal>
-          <p className="text-body text-saturn mb-10 leading-relaxed">
-            Start with Compass, the free readiness assessment. Seventeen
-            questions, about three minutes, scored out of 100 — it shows you
-            where the gaps are whether or not we ever speak.
+          <p className="text-xl text-veil/90 mb-12 leading-relaxed">
+            Every week your AI ships without a security architecture, the cost of
+            adding one later goes up. Here is the shortest path to fixing that.
           </p>
         </Reveal>
+
+        <ol className="space-y-8 mb-14">
+          {steps.map((step, i) => (
+            <Reveal key={step.title} delay={i * 0.05}>
+              <li className="flex gap-5 items-baseline">
+                <span className="font-mono text-xs text-varuna/70 shrink-0 pt-1">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3 className="text-lg font-medium text-veil mb-1">{step.title}</h3>
+                  <p className="text-saturn text-base leading-relaxed">{step.body}</p>
+                </div>
+              </li>
+            </Reveal>
+          ))}
+        </ol>
 
         <Reveal delay={0.05}>
           <a
@@ -24,7 +54,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="group inline-flex items-baseline gap-3 text-2xl lg:text-3xl font-light text-varuna hover:text-varuna-bright transition-colors"
           >
-            Take the free Readiness Assessment
+            Get your free AI Security Score
             <span
               className="text-lg transition-transform duration-200 group-hover:translate-x-1"
               aria-hidden="true"
@@ -35,31 +65,25 @@ const Contact = () => {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="text-body text-saturn mt-14 mb-6 leading-relaxed">
-            If the assessment surfaces something worth fixing, email me. Tell me
-            what stage you are at and which deal stalled. No form, no discovery
-            call before the conversation — it reaches me directly.
-          </p>
+          <div className="mt-8">
+            <a
+              href={`mailto:${EMAIL}`}
+              className="group inline-flex items-baseline gap-3 text-xl lg:text-2xl font-light text-varuna hover:text-varuna-bright transition-colors"
+            >
+              {EMAIL}
+              <span
+                className="text-base transition-transform duration-200 group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </a>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="group inline-flex items-baseline gap-3 text-xl lg:text-2xl font-light text-varuna hover:text-varuna-bright transition-colors"
-          >
-            {EMAIL}
-            <span
-              className="text-base transition-transform duration-200 group-hover:translate-x-1"
-              aria-hidden="true"
-            >
-              →
-            </span>
-          </a>
-        </Reveal>
-
-        <Reveal delay={0.2}>
           <p className="text-body text-saturn mt-14 leading-relaxed">
-            Not ready for either? I write{' '}
+            Not ready yet? Read{' '}
             <a
               href={NEWSLETTER_URL}
               target="_blank"
@@ -67,10 +91,10 @@ const Contact = () => {
               className="text-varuna hover:text-varuna-bright transition-colors border-b border-varuna/30 hover:border-varuna"
             >
               The Cyber Operating System
-            </a>{' '}
-            — a newsletter on building living security programs, where trust
-            becomes an operational advantage instead of an annual compliance
-            exercise.
+            </a>
+            , my newsletter on AI security architecture: the patterns, the
+            failures and the controls that work, sent before your buyers start
+            asking about them.
           </p>
         </Reveal>
 
@@ -78,10 +102,9 @@ const Contact = () => {
           <div className="mt-14">
             <hr className="oath-rule mb-8" />
             <p className="text-lg text-dharma font-light leading-relaxed">
-              I take a small number of engagements at a time. The work only
-              compounds when I am close enough to the team to build the system
-              with them — so I would rather do this properly for a few companies
-              than superficially for many.
+              I take a small number of engagements at a time. I would rather
+              architect this properly for a few companies than superficially for
+              many.
             </p>
           </div>
         </Reveal>
