@@ -1,104 +1,114 @@
 import React from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { PORTRAIT, ASSESSMENT_URL } from '../data/site'
+import HeroLattice from './HeroLattice'
+import { AIFORTESS_URL } from '../data/site'
 
-// Hormozi value equation, made visible: dream outcome and likelihood up,
-// time delay and effort down.
-const valueEquation = [
-  { label: 'Outcome', value: 'The security review closes the deal instead of stalling it' },
-  { label: 'Certainty', value: 'Mapped to OWASP LLM Top 10, MITRE ATLAS, ISO 42001' },
-  { label: 'Speed', value: 'An architecture in weeks, not a programme in quarters' },
-  { label: 'Effort', value: 'Built into your pipeline, not added to your backlog' },
+// Where each project sits on the lattice's shell (x right, y up, z toward you).
+const ANCHORS = [
+  { id: 'assessor', label: 'Assessor', href: '#assessor', position: [0.5, 0.62, 0.6] },
+  { id: 'vertias', label: 'Vertias AI', href: '#vertias', position: [0.88, -0.05, 0.47] },
+  { id: 'handler', label: 'Handler', href: '#handler', position: [0.12, -0.78, 0.6] },
+  { id: 'hackercam', label: 'Hacker Cam', href: '#hackercam', position: [-0.62, 0.22, 0.75] },
+]
+
+// Capitalised aliases: the lint config cannot see lower-case JSX member usage.
+const MotionP = motion.p
+const MotionH1 = motion.h1
+const MotionDiv = motion.div
+
+const LEGEND = [
+  ['bg-varuna', 'allowed'],
+  ['bg-signal', 'escalated'],
+  ['bg-alarm', 'blocked'],
 ]
 
 const Hero = () => {
   const reduce = useReducedMotion()
+  const enter = (delay) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 16 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.8, delay, ease: [0.21, 0.6, 0.35, 1] },
+        }
 
   return (
-    <section id="home" className="min-h-screen flex items-center px-6 py-24">
-      <motion.div
-        className="max-w-6xl mx-auto w-full grid gap-12 lg:gap-20 md:grid-cols-[minmax(0,360px)_1fr] items-center"
-        initial={reduce ? false : { opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.21, 0.6, 0.35, 1] }}
-      >
-        {/* Portrait sits behind a veil until attended to — the reveal is
-            deliberate rather than decorative. */}
-        <div className="relative group w-full max-w-[300px] md:max-w-none">
-          <div
-            className="absolute -inset-px border border-varuna/25 pointer-events-none transition-colors duration-700 group-hover:border-varuna/50"
-            aria-hidden="true"
-          />
-          <img
-            src={PORTRAIT}
-            alt="Rohit Kaundal"
-            className="w-full grayscale contrast-[1.05] opacity-75 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100"
-            loading="eager"
-          />
-        </div>
+    <section id="home" className="relative min-h-[100svh] overflow-hidden">
+      <div className="absolute inset-0 lg:left-[30%] opacity-70 lg:opacity-100">
+        <HeroLattice anchors={ANCHORS} />
+      </div>
+      <div className="hero-veil pointer-events-none absolute inset-0" />
 
-        <div>
-          <div className="doctrine-label mb-8">
-            <span className="veil-ring" aria-hidden="true" />
-            <span>AI Security Architect</span>
-          </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 min-h-[100svh] flex flex-col justify-end lg:justify-center pt-32 pb-14 pointer-events-none">
+        <div className="max-w-2xl pointer-events-auto">
+          <MotionP className="label flex items-center gap-3 mb-8" {...enter(0)}>
+            <span className="text-varuna"><span className="pulse-dot" /></span>
+            Rohit Kaundal · Cybersecurity &amp; AI Builder
+          </MotionP>
 
-          <h1 className="text-5xl md:text-6xl mb-8 font-light text-veil">
-            Rohit Kaundal
-          </h1>
+          <MotionH1
+            className="text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.6rem] font-light text-veil mb-8"
+            {...enter(0.08)}
+          >
+            I build systems,
+            <br />
+            break them,
+            <br />
+            and make them <span className="voice text-varuna">smarter.</span>
+          </MotionH1>
 
-          <p className="text-2xl mb-10 text-varuna font-light leading-snug">
-            I architect AI systems that pass the enterprise security review the
-            first time, and stay secure after they ship.
-          </p>
+          <MotionP className="text-lg lg:text-xl text-veil/80 leading-relaxed max-w-xl mb-6" {...enter(0.16)}>
+            Developer first, then fifteen years on both sides of the attack:
+            penetration testing, forensics, cybercrime investigation, DevSecOps
+            and the SOC. Now I build AI governance and agent security systems.
+          </MotionP>
 
-          <p className="text-xl mb-8 text-veil/85 leading-relaxed">
-            Your AI product is ready. Your security architecture isn&apos;t.
-            Agents with tool access, models pulled from public hubs, prompts
-            carrying customer data: enterprise buyers now want to know how all
-            of it is controlled.
-          </p>
-
-          <p className="text-lg text-saturn leading-relaxed mb-10">
-            I design the architecture that answers them, then build it into your
-            pipeline so it keeps running every day.
-          </p>
-
-          <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mb-12">
-            {valueEquation.map((item) => (
-              <div key={item.label} className="border-t border-rahu-border pt-3">
-                <dt className="font-mono text-xs uppercase tracking-doctrine text-varuna/80 mb-1">
-                  {item.label}
-                </dt>
-                <dd className="text-sm text-saturn leading-relaxed">{item.value}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
+          <MotionP className="text-base text-saturn mb-10" {...enter(0.2)}>
+            Founder of{' '}
             <a
-              href={ASSESSMENT_URL}
+              href={AIFORTESS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 border border-varuna/60 text-varuna hover:bg-varuna hover:text-rahu-void hover:border-varuna transition-colors duration-200 text-center"
+              className="text-veil border-b border-varuna/40 hover:border-varuna hover:text-varuna transition-colors duration-200"
             >
-              Get your free AI Security Score
+              AIFortess
             </a>
+            , building AI-driven security and trust infrastructure from Dubai.
+          </MotionP>
 
+          <MotionDiv className="flex flex-wrap items-center gap-x-8 gap-y-4" {...enter(0.26)}>
             <a
-              href="#offer"
-              className="inline-block text-saturn hover:text-varuna transition-colors duration-200 text-center"
+              href="#lab"
+              className="group inline-flex items-center gap-3 px-6 py-3 bg-varuna text-rahu-void font-medium hover:bg-varuna-bright transition-colors duration-200"
             >
-              See the Architecture Sprint →
+              Enter the lab
+              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-y-0.5">↓</span>
             </a>
-          </div>
-
-          <p className="mt-10 text-sm text-saturn-dim leading-relaxed">
-            15 years in pentesting, forensics, DevSecOps and SOC · Founder of
-            AIFortess · CSA AI Trustworthy Pledge signatory
-          </p>
+            <a href="#evolution" className="link-arrow">
+              How I got here <span aria-hidden="true">→</span>
+            </a>
+          </MotionDiv>
         </div>
-      </motion.div>
+
+        <MotionDiv
+          className="pointer-events-auto mt-16 lg:mt-0 lg:absolute lg:bottom-10 lg:right-10 lg:text-right max-w-xs lg:max-w-sm"
+          {...enter(0.5)}
+        >
+          <ul className="flex lg:justify-end gap-5 mb-2" aria-label="Signal legend">
+            {LEGEND.map(([color, name]) => (
+              <li key={name} className="label flex items-center gap-2 !tracking-[0.14em]">
+                <span className={`w-1.5 h-1.5 rounded-full ${color}`} aria-hidden="true" />
+                {name}
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-saturn-dim leading-relaxed">
+            Every signal in the lattice passes a policy core before it reaches
+            anything that matters. That is the kind of system I build.
+          </p>
+        </MotionDiv>
+      </div>
     </section>
   )
 }

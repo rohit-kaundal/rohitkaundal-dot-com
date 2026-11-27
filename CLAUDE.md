@@ -11,72 +11,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is an AI governance and cybersecurity professional portfolio website built as a React SPA with institutional minimalism design philosophy.
+Personal site of Rohit Kaundal, positioned as a **Cybersecurity & AI Builder** (founder of AIFortess). React SPA, dark "instrument lab" aesthetic: each project is shown as a working interactive model, not a card.
 
 ### Tech Stack
-- **Frontend**: React 18 with Vite as build tool
-- **Styling**: Tailwind CSS with custom institutional color palette
-- **Animations**: Minimal Framer Motion (entrance animations only)
-- **Typography**: Space Grotesk (futuristic geometric sans-serif)
-- **Icons**: Lucide React (minimal usage)
+- React 19 + Vite, Tailwind CSS 3, Framer Motion (entrance/reveal only), Lucide icons
+- Fonts: Space Grotesk (text), JetBrains Mono (`.label` metadata register), Instrument Serif italic (`.voice`, one emphasis word per headline)
 
-### Component Structure
-Single-page application with section-based components:
-- `App.jsx`: Main layout with institutional charcoal background
-- `Navigation.jsx`: Minimal sticky navigation with underline-on-hover
-- `Hero.jsx`: Typography-driven landing section with single entrance animation
-- `Manifesto.jsx`: Governance doctrine and authority positioning content
-- `DomainsOfFocus.jsx`: Four expertise areas (replaces old Skills component)
-- `About.jsx`: Extended narrative with background and areas of application
-- `Work.jsx`: Curated project showcase in narrative format (replaces Projects)
-- `Contact.jsx`: Email-first contact with selective positioning
+### Structure
+- `src/data/` holds every fact the site states. Edit content here, not in components.
+  - `projects.js`: the four builds. `repo.public: false` renders "Source · private" instead of a link.
+  - `lab.js`: Field Notes log entries (instructions at the top of the file).
+  - `evolution.js`: career phases + credentials, sourced from the 2026 professional profile.
+  - `site.js`: email, socials, PGP.
+- `src/components/`
+  - `Hero.jsx` + `HeroLattice.jsx`: 2D-canvas pseudo-3D lattice with a policy core; signals are allowed/escalated/blocked. Pauses offscreen, static frame under reduced motion. Project anchors are DOM links positioned per frame.
+  - `Lab.jsx`: project chapters with alternating layouts; instruments in `components/instruments/`
+    (`AssessorMap`, `VertiasGateway`, `HandlerSectors`, `HackerCamReel`). Each mirrors the real product's logic.
+  - `FieldNotes.jsx`, `Evolution.jsx` (sticky phase word), `Thread.jsx` (principles with evidence), `Contact.jsx`, `Navigation.jsx`, `Footer.jsx`, `Reveal.jsx`, `SectionHeading.jsx`
+- `public/builds/hackercam/`: real frames from the HackerCamFilter repo docs.
 
-### Styling System
-- Custom Tailwind configuration with institutional colors:
-  - `institutional-charcoal` (#0A0E1A): Deep background
-  - `institutional-white` (#F5F5F5): Primary text
-  - `institutional-accent` (#6B7A99): Subtle blue-gray accent
-  - `institutional-gold` (#B8956A): Warm hover state
-  - `institutional-border` (#1F2937): Subtle borders
-  - `institutional-hover` (#1A202E): Background hover states
-- Minimal design with typography hierarchy (font-weight: 300)
-- Responsive typography scaling (18px → 20px body text)
-- Simple CSS transitions for hover states (200ms duration)
-- No glassmorphism, neon effects, or complex animations
+### Colour tokens (tailwind.config.js)
+`rahu.*` backgrounds, `varuna` aquamarine (primary / "allowed"), `saturn` secondary text, `veil` primary text, `signal` amber ("escalated", in-progress), `alarm` red ("blocked", status labels only), `dharma` gold (one "carried forward" idea per career phase).
 
-### Key Design Patterns
-- All components are functional components using React hooks
-- Minimal animations: Only subtle entrance fade-in on Hero (no stagger, no delays)
-- CSS transitions only for interactive states (no Framer Motion hover effects)
-- Authority positioning: Declarative content, no persuasion or metrics bragging
-- Editorial layout: `.prose` class for max-width 800px content containers
-- Smooth scroll behavior and custom scrollbar styling (institutional colors)
+### Content rules
+- Builder and founder first. Consulting/advisory only as supporting background.
+- Never invent features, users, metrics, testimonials or experiments. Every claim must trace to a repo, the profile PDF, or a live site.
+- Vertias AI is pre-launch: describe it as in build (UI prototype + v1 design done, launch by Feb 2027).
+- Field Notes logs only things that happened; empty categories show a reserved empty state.
+- Contact is email-first: rohit@aifortess.com. No Calendly, no sales offers.
+- Do not showcase the website's own tech stack on the site.
 
-### Content Strategy
-- **Positioning**: AI Governance & Cyber Defense Authority (not consultant)
-- **Tone**: Institutional, doctrine-driven, selective
-- **Navigation Flow**: Home → Manifesto → Work → About → Contact
-- **Contact Email**: rohit@aifortess.com
-- **No Calendly CTAs**: Email-first contact strategy
-- **No startup language**: Removed "SaaS", "founders", "fast-growing" terminology
-- **Selective copy**: "This is institutional work—not project-based consulting"
-
-### Removed Components & Features
-These components were part of the previous neo-cyberpunk design and have been removed:
-- `MouseTrail.jsx`: Custom glowing cursor
-- `Skills.jsx`: Proficiency bars and tool lists
-- `Services.jsx`: Service offerings grid (content integrated into About)
-- `Certifications.jsx`: Certification badges (content integrated into About)
-- `Projects.jsx`: GitHub-style project cards (replaced by Work.jsx narrative format)
-- Three.js animated particles/globe in Hero
-- Calendly integration throughout site
-- Profile picture with neon border
-- Glass cards and gradient backgrounds
-
-### Development Notes
-- Uses ES modules throughout
-- Global styles defined in `index.css` for typography and spacing
-- Section spacing: 8rem (mobile/tablet) → 10rem (desktop)
-- All hover states use `transition-colors duration-200` pattern
-- Components are self-contained with minimal prop drilling
-- Git branch: `redesign-institutional` (redesign work), `master` (previous design)
+### Lint note
+ESLint's core `no-unused-vars` cannot see lower-case JSX member usage (`<motion.div>`), so components alias to capitalised names (`const MotionDiv = motion.div`).
