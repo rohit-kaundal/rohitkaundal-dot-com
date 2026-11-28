@@ -9,6 +9,7 @@ const ANCHORS = [
   { id: 'vertias', label: 'Vertias AI', href: '#vertias', position: [0.88, -0.05, 0.47] },
   { id: 'handler', label: 'Handler', href: '#handler', position: [0.12, -0.78, 0.6] },
   { id: 'hackercam', label: 'Hacker Cam', href: '#hackercam', position: [-0.62, 0.22, 0.75] },
+  { id: 'fortess', label: 'Fortess Files', href: '#fortess', position: [-0.35, -0.6, 0.72] },
 ]
 
 // Capitalised aliases: the lint config cannot see lower-case JSX member usage.

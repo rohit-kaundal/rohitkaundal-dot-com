@@ -5,12 +5,14 @@ import AssessorMap from './instruments/AssessorMap'
 import VertiasGateway from './instruments/VertiasGateway'
 import HandlerSectors from './instruments/HandlerSectors'
 import HackerCamReel from './instruments/HackerCamReel'
+import FortessLab from './instruments/FortessLab'
 import { projects } from '../data/projects'
 import { AIFORTESS_URL } from '../data/site'
 
 const INSTRUMENTS = {
   assessor: AssessorMap,
   vertias: VertiasGateway,
+  fortess: FortessLab,
   handler: HandlerSectors,
   hackercam: HackerCamReel,
 }
@@ -100,7 +102,9 @@ const Chapter = ({ id, flip = false }) => {
         <p className="mt-3 text-xs text-saturn-dim">
           {id === 'vertias'
             ? 'Interactive simulation of the v1 design. Hashes are computed in your browser.'
-            : 'Interactive model of the real product. Sample data only.'}
+            : id === 'fortess'
+              ? 'The Floor 1 defense lab, with the same attack suite as the game.'
+              : 'Interactive model of the real product. Sample data only.'}
         </p>
       </Reveal>
     </article>
@@ -115,7 +119,7 @@ const Lab = () => {
         <SectionHeading
           number="01"
           eyebrow="The Lab · projects, experiments & systems"
-          lede="Four builds, four different problems. Each one below is a working model of how the real thing behaves, so you can try it instead of reading about it."
+          lede="Five builds, five different problems. Each one below is a working model of how the real thing behaves, so you can try it instead of reading about it."
         >
           Things I&apos;m <span className="voice text-varuna">building.</span>
         </SectionHeading>
@@ -138,7 +142,8 @@ const Lab = () => {
         <div className="space-y-32 lg:space-y-44">
           <Chapter id="assessor" />
           <Chapter id="vertias" flip />
-          <Chapter id="handler" />
+          <Chapter id="fortess" />
+          <Chapter id="handler" flip />
 
           {/* Hacker Cam breaks the rhythm: the frames get the full width. */}
           <article id="hackercam" className="scroll-mt-24">

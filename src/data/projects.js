@@ -1,5 +1,5 @@
 // The builds shown in "The Lab". Every claim here is taken from the project's
-// own repository (README, spec, design doc, git history). Do not add features,
+// own repository or live site (README, spec, design doc, git history). Do not add features,
 // users or metrics that the repo cannot back up.
 //
 // repo.public: only public repos are linked. Private ones render as
@@ -57,8 +57,32 @@ export const projects = [
     repo: { href: 'https://github.com/rohit-kaundal/vertias-ai', public: false },
   },
   {
-    id: 'handler',
+    id: 'fortess',
     index: '03',
+    name: 'Fortess Files',
+    kind: 'Product · AI security education',
+    status: { label: 'Live · 5 floors', tone: 'live' },
+    oneLiner:
+      'A 2D game that teaches AI security by making you break an AI system first, then defend it.',
+    problem:
+      'AI security is mostly taught with slides and checklists. Attacks like prompt injection or data poisoning only really click once you have pulled one off yourself, and there was nowhere safe to do that.',
+    what:
+      'You start as a new analyst at AIFortess Labs, a fictional company having a very bad week. Each floor of its office is an incident: walk the floor, interview the staff and collect clues, reproduce the attack in a hands-on mini-game, then pick defenses and replay real attacks against them. A debrief and quiz close each floor.',
+    capabilities: [
+      'Five incidents · OWASP LLM Top 10',
+      'Attack first, then defend',
+      'Real models trained in the browser',
+      'Simulated chatbots · no AI API calls',
+      'XP, badges and a leaderboard',
+      'Keeps playing offline, syncs later',
+    ],
+    stack: ['React', 'TypeScript', 'Phaser', 'Cloudflare Workers', 'D1', 'Clerk'],
+    links: [{ label: 'Play it', href: 'https://fortessfiles.aifortess.com' }],
+    repo: { href: '', public: false },
+  },
+  {
+    id: 'handler',
+    index: '04',
     name: 'Handler',
     kind: 'App · Personal operating system',
     status: { label: 'v0.1 · working PWA', tone: 'live' },
@@ -82,7 +106,7 @@ export const projects = [
   },
   {
     id: 'hackercam',
-    index: '04',
+    index: '05',
     name: 'Hacker Cam',
     kind: 'Experiment · Computer vision',
     status: { label: 'v1.0.4 · open source', tone: 'live' },
