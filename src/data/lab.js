@@ -23,6 +23,14 @@ export const types = {
 
 export const entries = [
   {
+    date: '2026-11-28',
+    type: 'build',
+    title: 'Fortess Files: five AI security incidents you can play',
+    body: 'Launched a 2D game where each office floor is an AI incident: prompt injection, a poisoned inbox, a backdoored dataset, a taped STOP sign and an AI agent with too many permissions. You attack each system first, then defend it. The poisoning and STOP-sign floors train real models in your browser.',
+    href: 'https://fortessfiles.aifortess.com',
+    linkLabel: 'Play it',
+  },
+  {
     date: '2026-11-27',
     type: 'build',
     title: 'Hacker Cam: from a script to cross-platform installers in one day',
